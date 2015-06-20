@@ -1,3 +1,5 @@
+# Test Change
+
 This is the root folder. Folder structure as follows:
 
 \BulletinBoard_Django	:	root folder
