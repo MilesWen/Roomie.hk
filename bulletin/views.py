@@ -34,7 +34,7 @@ def login_FB(request):
 	return render(request, 'bulletin/login.html')
 
 # information from facebook
-@login_required(login_url='/')
+# @login_required(login_url='/')
 def social_login(request):
 	social_user = request.user.social_auth.filter(provider='facebook',).first()
 	if social_user:	
@@ -74,15 +74,14 @@ def social_login(request):
 		return None
 
 # show profile of user
-@login_required(login_url='/')
-def profile(request):
+# @login_required(login_url='/')
+def profile(request, user_id):
 	# scenario: user wants to check the profile of the roomate/room owner
 	context_dict = {}
 
 	try:
-		user = User.objects.get(id=request.session['userid'])
+		user = User.objects.get(id=user_id)
 		context_dict['userInfo'] = user
-		context_dict['fbImg'] = request.session['fb_img']
 		
 	except User.DoesNotExist:
 		pass
@@ -90,15 +89,14 @@ def profile(request):
 	return render(request, 'bulletin/profile.html',context_dict)
 
 # ask for preference (filtering info) from user
-@login_required(login_url='/')
-def preferences(request):
+# @login_required(login_url='/')
+def preferences(request, user_id):
 	context_dict = {}
 	# scenario: user wants to check his/her preferences
 
 	try:
-		user = User.objects.get(id=request.session['userid'])
+		user = User.objects.get(id=user_id)
 		context_dict['userInfo'] = user
-		context_dict['fbImg'] = request.session['fb_img']
 
 	except User.DoesNotExist:
 		pass
@@ -106,15 +104,14 @@ def preferences(request):
 	return render(request, 'bulletin/preferences.html',context_dict)
 
 # return bulletin listing
-@login_required(login_url='/')
-def listing(request):
+# @login_required(login_url='/')
+def listing(request, user_id):
 	# user_id is the id of a room SEEKer
 	# scenario: given the preferences of a room seeker user_id, return a list of rooms based on the preferences
 	context_dict = {}
 	
 	try:
-		print request.session['userid']
-		seeker = User.objects.get(id=request.session['userid'])
+		seeker = User.objects.get(id=user_id)
 		
 		#preference attributes (to owners): gender_mate, occupation_mate, hasPet_mate, smoker_mate, quiet_mate,
 		#preference attributes (to seekers): same as above
@@ -137,7 +134,7 @@ def listing(request):
 	return render(request, 'bulletin/listing.html', context_dict)
 
 # return bulletin details
-@login_required(login_url='/')
+# @login_required(login_url='/')
 def details(request, room_id):
 	# scenario: user views the details of a room and its owner details
 	context_dict = {}
