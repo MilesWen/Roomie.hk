@@ -14,7 +14,11 @@ This is the Login page.
   <br>
   <a href="/bulletin/logout">Logout</a>
 {% else %}
+<<<<<<< HEAD
   <a href="{% url 'social:begin' 'facebook' %}?next={{ views.social_login }}">Login with Facebook</a>
+=======
+  <a href="{% url 'social:begin' 'facebook' %}?next={{ views.preferences }}">Login with Facebook</a>
+>>>>>>> origin/jieming
 {% endif %}
 
 {% endblock %}
