@@ -20,13 +20,13 @@ urlpatterns = [
 	url(r'^social_login/$', views.social_login, name='social_login'),
 	
 	# ex: /bulletin/profile/
-	url(r'^profile/$', views.profile, name='profile'), # profile page
+	url(r'^profile/(?P<user_id>[0-9]+)/$', views.profile, name='profile'), # profile page
 
 	# ex: /bulletin/listing/
-	url(r'^listing/$', views.listing, name='listing'), # listing page
+	url(r'^listing/(?P<user_id>[0-9]+)/$', views.listing, name='listing'), # listing page
 
 	# ex: /bulletin/preferences/
-	url(r'^preferences/$', views.preferences, name='preferences'), # preferences page
+	url(r'^preferences/(?P<user_id>[0-9]+)/$', views.preferences, name='preferences'), # preferences page
 
 	# ex: /bulletin/details/
 	url(r'^details/(?P<room_id>[0-9]+)/$', views.details, name="details"), # details page
