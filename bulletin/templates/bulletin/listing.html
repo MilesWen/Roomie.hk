@@ -1,8 +1,61 @@
-<!DOCTYPE html>
-{% extends 'bulletin/base.html' %} <!-- using the base.html interface -->
+	{% extends 'bulletin/base.html' %} <!-- using the base.html interface -->
 
 {% load staticfiles %}
 
 {% block title %} Listing pages {% endblock %}
 
-{% block body_block %} Listing {% endblock %}
+{% block body_id %}roomie-listing-page{% endblock %}
+{% block body_block %}
+	<!-- Hamburger -->
+    <nav id="menu" class="menu">
+      <a href="https://github.com/mango/slideout" target="_blank">
+        <header class="menu-header">
+          <span class="menu-header-title">#</span>
+        </header>
+      </a>
+      <!-- Menu area -->
+      <section class="menu-section">
+        <ul class="menu-section-list">
+          <li><a href="" target="_blank">Profile</a></li>
+          <li><a href="" target="_blank">Search</a></li>
+          <li><a href="" target="_blank">Add my place</a></li>
+        </ul>
+      </section>
+      <section class="menu-section">
+        <ul class="menu-section-list">
+          <li><a href="" target="_blank">Message</a></li>
+          <li><a href="" target="_blank">Bookmarks</a></li>
+        </ul>
+      </section>
+      <section class="menu-section">
+        <ul class="menu-section-list">
+          <li><a href="" target="_blank">Logout</a></li>
+        </ul>
+      </section>
+      <!-- end of Menu area -->
+    </nav>
+    <!-- end of Hamburger -->
+
+    <div id="panel" class="panel purple-bg app-container"><!-- App body -->
+      <header class="panel-header">
+        <button class="btn-hamburger js-slideout-toggle"></button>
+      </header>
+      <div class='app-content' style='display:block;height:568px;'><!-- App content -->
+      	
+      </div><!-- end of App content -->
+    </div><!-- end of App body -->
+
+    <!-- Hamburger menu script -->
+    <script>
+      window.onload = function() {
+        document.querySelector('.js-slideout-toggle').addEventListener('click', function() {
+          slideout.toggle()
+        })
+
+        document.querySelector('.menu').addEventListener('click', function(eve) {
+          if (eve.target.nodeName === 'A') { slideout.close() }
+        })
+      }
+    </script>
+    <!-- end of Hamburger menu script -->
+{% endblock %}
