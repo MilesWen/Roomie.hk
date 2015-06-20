@@ -5,38 +5,38 @@
 {% block title %} Listing pages {% endblock %}
 
 {% block body_id %}roomie-listing-page{% endblock %}
-{% block body_block %}
-  {% if seeker %}
-    <ul>
-        <li>Seeker id: {{seeker.id}}</li>
-        <li>Seeker name: {{seeker.name}}</li>
-        <li>Seeker gender: {{seeker.gender}}</li>
-        <li>Seeker's roommate gender preference: {{seeker.gender_mate}}</li>
-        <li>Seeker's district preference: {{seeker.district}}</li>
-        <li>Seeker's isPrivate preference: {{seeker.isPrivate}}</li>
-        <li>Seeker's price gender preference: {{seeker.price}}</li>
-        
-    </ul>
+{% block body_block %} {% endblock %}
 
-    {% if roomList %}
-      <ul>
-          {% for room in roomList %}
-            <li>Room:   {{ room.id }}</li>
-            <li>Owner:   {{ room.user }}</li>
-            <li>Owner gender:   {{ room.user.gender }}</li>
-            <li>Room district:   {{ room.district }}</li>
-            <li>Room isPrivate:   {{ room.isPrivate }}</li>
-            <li>Room price:   {{ room.price }}</li>
-          {% endfor %}
-      </ul>
-    
-    {% else %}
-        The specified roomList  does not exist!
-    {% endif %}
+<!-- Delete the following codes in production mode! -->
+
+{% if seeker %}
+  <ul>
+      <li>Seeker id: {{seeker.id}}</li>
+      <li>Seeker name: {{seeker.name}}</li>
+      <li>Seeker gender: {{seeker.gender}}</li>
+      <li>Seeker's roommate gender preference: {{seeker.gender_mate}}</li>
+      <li>Seeker's district preference: {{seeker.district}}</li>
+      <li>Seeker's isPrivate preference: {{seeker.isPrivate}}</li>
+      <li>Seeker's price gender preference: {{seeker.price}}</li>
+      
+  </ul>
+
+  {% if roomList %}
+    <ul>
+        {% for room in roomList %}
+          <li>Room:   {{ room.id }}</li>
+          <li>Owner:   {{ room.user }}</li>
+          <li>Owner gender:   {{ room.user.gender }}</li>
+          <li>Room district:   {{ room.district }}</li>
+          <li>Room isPrivate:   {{ room.isPrivate }}</li>
+          <li>Room price:   {{ room.price }}</li>
+        {% endfor %}
+    </ul>
   
   {% else %}
-      The specified seeker does not exist!
+      The specified roomList  does not exist!
   {% endif %}
 
-{% endblock %}
-
+{% else %}
+    The specified seeker does not exist!
+{% endif %}
