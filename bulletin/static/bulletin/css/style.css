@@ -391,7 +391,7 @@ ul.listing-renter-about li {
 	display: inline-block;
 	width: 48px;
 	height: 48px;
-	zoom:1;
+	zoom:0.5;
 	background: url('../assets/icons.png') 0 -48px;
 }
 .btn-edit {
