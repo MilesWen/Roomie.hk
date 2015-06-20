@@ -73,6 +73,15 @@ body#roomie-listing-page {
 	display: inline-block;
 	position: relative;
 }
+#wrapper {
+  margin: 0;
+  width: 100%; 
+  height: 160px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute; /* this breaks the overflow:hidden in Chrome/Opera */
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); /* this fixes the overflow:hidden in Chrome/Opera */
+}
 #map-canvas {
   height: 160px;
   width: 100%;
