@@ -24,13 +24,13 @@
       </section>
       <section class="menu-section">
         <ul class="menu-section-list">
-          <li><a href="" target="_blank">Message</a></li>
-          <li><a href="" target="_blank">Bookmarks</a></li>
+          <li><a href="">Message</a></li>
+          <li><a href="">Bookmarks</a></li>
         </ul>
       </section>
       <section class="menu-section">
         <ul class="menu-section-list">
-          <li><a href="" target="_blank">Logout</a></li>
+          <li><a href="">Logout</a></li>
         </ul>
       </section>
       <!-- end of Menu area -->
@@ -56,7 +56,9 @@
       	
       	<!-- carousel view here -->
       	<div class='listing-card'><!-- listing card -->
-      		<div id="map-canvas"></div>
+      		<div id='wrapper'>
+            <div id="map-canvas"></div>
+          </div>
       		<div class='js-listing-card-price listing-card-price'>HKD 6,700</div>
       		<div class='listing-card-content-div'><!-- listing details -->
       			<div class='card-header'>
@@ -90,7 +92,7 @@
     			<div class="row">
 	        	<div class='col-xs-2'></div>
 	        	<div class='col-xs-4 center-align'>
-	        		<a href='' class='btn-round btn-bookmark'>
+	        		<a href='' class='btn-round btn-bookmark js-bookmark' id=''>
 	        		</a>
 	        	</div>
 	        	<div class='col-xs-4 center-align'>
@@ -142,10 +144,22 @@
 			  })
 			}
 			google.maps.event.addDomListener(window, 'load', initialize)
-		</script>
-		<!-- end of Google maps in listing card -->
+		</script><!-- end of Google maps in listing card -->
+    <!-- bookmark action -->
 {% endblock %}
-
+{% block custome_js_block %}
+    <script>
+      $('.js-bookmark').click(function(){
+        console.log($(this).attr('class'))
+        if($(this).hasClass('active')) {
+          $(this).removeClass('active')
+        } else {
+          $(this).addClass('active')
+        }
+        return false;
+      })
+    </script><!-- end of bookmark action -->
+{% endblock %}
 <!-- Delete the following codes in production mode! -->
 
 {% if seeker %}
