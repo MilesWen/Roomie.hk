@@ -25,5 +25,5 @@ urlpatterns = [
 	url(r'^preferences/$', views.preferences, name='preferences'), # preferences page
 
 	# ex: /bulletin/details/
-	url(r'^details/$', views.details, name="details"), # details page
+	url(r'^details/(?P<room_id>[0-9]+)/$', views.details, name="details"), # details page
 ]
