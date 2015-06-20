@@ -69,7 +69,7 @@ def social_login(request):
 			userFriend = Friend(user=user, friend=str(frdLst))
 			userFriend.save()
 			
-		return preferences(request)
+		return preferences(request, user.id)
 	else:
 		return None
 
