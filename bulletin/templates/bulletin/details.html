@@ -25,7 +25,7 @@
 		NumMates:	{{ roomInfo.numExistingMates }}
 		<img scr="{{ roomInfo.pictureURL }}" alt="Room Picture">
 		<!-- Info about owner -->
-		
+		{% comment %}
 		Information about Owner:
 		Name:		{{ ownerInfo.name }}
 		Age:		{{ ownerInfo.age }}
@@ -41,5 +41,6 @@
 		Prefer Pet?				{{ ownerInfo.hasPet_mate }}
 		Prefer smoker?			{{ ownerInfo.smoker_mate }}
 		Prefer quiet?			{{ ownerInfo.quiet_mate }}
+		{% endcomment %}
 	{% endif %}
 {% endif %}
