@@ -153,17 +153,18 @@
     <!-- bookmark action -->
 {% endblock %}
 {% block custome_js_block %}
-    <script>
-      $('.js-bookmark').click(function(){
-        console.log($(this).attr('class'))
-        if($(this).hasClass('active')) {
-          $(this).removeClass('active')
-        } else {
-          $(this).addClass('active')
-        }
-        return false;
-      })
-    </script><!-- end of bookmark action -->
+  <!-- bookmark action -->
+  <script>
+    $('.js-bookmark').click(function(){
+      console.log($(this).attr('class'))
+      if($(this).hasClass('active')) {
+        $(this).removeClass('active')
+      } else {
+        $(this).addClass('active')
+      }
+      return false;
+    })
+  </script><!-- end of bookmark action -->
 {% endblock %}
 <!-- Delete the following codes in production mode! -->
 
