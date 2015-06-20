@@ -41,7 +41,7 @@ class User(models.Model):
     stayPeriod = models.PositiveIntegerField(default=12)    
     
     def __str__(self): # __str__ for Python 3, __unicode__ for Python 2
-        return self.user_name
+        return self.name
     
 class Room(models.Model):
     # primary key, i.e., id is added automatically
