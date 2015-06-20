@@ -99,57 +99,7 @@
       }
     </script>
     <!-- end of Hamburger menu script -->
-    <!-- Google maps in listing card -->
-    <script>
-      var map
-        , icon = {
-            url: "{% static 'bulletin/assets/map-pin.png' %}"
-          , size: new google.maps.Size(50, 50)
-          , origin: new google.maps.Point(0,0)
-          , anchor: new google.maps.Point(25, 25)
-        }
-        , latlng = new google.maps.LatLng(22.306011, 114.1879995)
-        , marker
-
-      var map1
-        , icon = {
-            url: "{% static 'bulletin/assets/map-pin.png' %}"
-          , size: new google.maps.Size(50, 50)
-          , origin: new google.maps.Point(0,0)
-          , anchor: new google.maps.Point(25, 25)
-        }
-        , latlng = new google.maps.LatLng(22.306011, 114.1879995)
-        , marker
-
-      var maps = []
-      var markers = []
-
-      function initialize(count) {
-      //    map = new google.maps.Map(document.getElementById('map-canvas-'.concat({{forloop.counter}})), {
-          var map_id = 'map-canvas-' + count
-          console.log(count, map_id)
-          console.log($('#'+map_id))
-          maps[count] = new google.maps.Map(document.getElementById('map-canvas'), {
-              zoom: 16
-            , center: {lat: 22.306011, lng: 114.1879995}
-            , disableDefaultUI: true
-          })
-
-          markers[count] = new google.maps.Marker({
-              position: latlng
-            , map: maps[count]
-            , icon: icon
-            , animation: google.maps.Animation.DROP,
-          })
-
-          console.log(maps[count])
-      }
-      for (var count = 1; count < 3; count++)
-        google.maps.event.addDomListener(window, 'load', initialize(count))
-        //initialize({{forloop.counter}})
-      
-    </script>
-		<!-- end of Google maps in listing card -->
+    
 {% endblock %}
 
 <!-- Delete the following codes in production mode! -->
