@@ -12,7 +12,7 @@
 	{% if !room.Info.user %}
 		Damn, who owns this shitty house?
 	{% else %}
-		Owner:		{{ roomInfo.user }}
+		Owner_id:	{{ ownerInfo.name }}
 		Addr:		{{ roomInfo.address }}
 		Dist:		{{ roomInfo.district }}
 		Latitude:	{{ roomInfo.latitude }}
@@ -23,6 +23,23 @@
 		MoveIn:		{{ roomInfo.moveInDate }}
 		Size:		{{ roomInfo.size }}
 		NumMates:	{{ roomInfo.numExistingMates }}
-		<img scr="{% roomInfo.pictureURL %}" alt="Room Picture">
+		<img scr="{{ roomInfo.pictureURL }}" alt="Room Picture">
+		<!-- Info about owner -->
+		
+		Information about Owner:
+		Name:		{{ ownerInfo.name }}
+		Age:		{{ ownerInfo.age }}
+		Gender:		{{ ownerInfo.gender }}
+		Occupation:	{{ ownerInfo.occupation }}
+		Pet?:		{{ ownerInfo.hasPet }}
+		Smoke?:		{{ ownerInfo.smoker }}
+		Quiet?:		{{ ownerInfo.quiet }}
+
+		Information about Onwer Preference:
+		Preferred Gender:		{{ ownerInfo.gender_mate }}
+		Preferred Occupation:	{{ ownerInfo.occuptaion_mate }}
+		Prefer Pet?				{{ ownerInfo.hasPet_mate }}
+		Prefer smoker?			{{ ownerInfo.smoker_mate }}
+		Prefer quiet?			{{ ownerInfo.quiet_mate }}
 	{% endif %}
 {% endif %}

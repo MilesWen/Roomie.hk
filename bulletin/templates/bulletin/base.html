@@ -18,6 +18,9 @@
 	  <link href="{% static 'bulletin/css/lib/range-selector.css'%} " rel="stylesheet" media="screen">
 	  <!-- custom styles -->
 	  <link href="{% static 'bulletin/css/style.css'%} " rel="stylesheet" media="screen">
+
+	  {% block head_block %}
+	  {% endblock %}
 	</head>
 
 	<body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">
