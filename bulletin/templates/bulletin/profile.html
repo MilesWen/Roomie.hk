@@ -7,3 +7,35 @@
 
 {% block body_block %} Profile {% endblock %}
 
+<style type="text/css">
+h1 {font-family:Georgia, serif;}
+</style>
+
+{{ userInfo.id }}
+{% if userInfo  %}
+    <h1> User Own Data. </h1>
+    <img src="{{ userInfo.fbProfilePhotoURL }}" alt="User Picture">
+    <p>FacebookID: {{userInfo.fbid}} </p>
+    <p>Name:   {{ userInfo.name }}</p>
+	<p>Age:	{{ userInfo.age }}</p>
+	<p>Gender:		{{ userInfo.gender }}</p>
+	<p>Occupation:		{{ userInfo.occupation }}</p>
+	<p>HasPet?:	{{ userInfo.hasPet }}</p>
+	<p>Smoker?:	{{ userInfo.smoker }}</p>
+	<p>Quiet?:	{{ userInfo.quiet }}</p>
+
+	<h1>User Expectation of the Roomate</h1>
+	<p>Expected_Roomate_Gender:  {{ userInfo.gender_mate }}</p>
+	<p>Expected_Roomate_Occupation: {{ userInfo.occupation_mate }}</p>
+	<p>Should_hasPet?:		{{ userInfo.hasPet_mate }}</p>
+	<p>Prefer_Smoke?:	{{ userInfo.smoker_mate }}</p>
+	<p>Should_Quiet?:  {{ userInfo.quiet_mate }}</p>
+
+    <h1>User Expectation of the Room</h1>
+	<p>Preferred District:		{{ userInfo.district }}</p>
+	<p>Prefer isPrivate?:		{{ userInfo.isPrivate }}</p>
+	<p>Preferred Price:		{{ userInfo.price }}</p>
+	<p>Preferred MoveInDate:	{{ userInfo.moveInDate }}</p>
+	<p>Preferred StayPeriod:	{{ userInfo.stayPeriod }}</p>
+
+{% endif %}
