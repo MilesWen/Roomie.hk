@@ -129,7 +129,7 @@
           var map_id = 'map-canvas-' + count
           console.log(count, map_id)
           console.log($('#'+map_id))
-          maps[count] = new google.maps.Map(document.getElementById(map_id), {
+          maps[count] = new google.maps.Map(document.getElementById('map-canvas'), {
               zoom: 16
             , center: {lat: 22.306011, lng: 114.1879995}
             , disableDefaultUI: true
@@ -145,7 +145,7 @@
           console.log(maps[count])
       }
       for (var count = 1; count < 3; count++)
-        google.maps.event.addDomListener(window, 'onload', initialize(count))
+        google.maps.event.addDomListener(window, 'load', initialize(count))
         //initialize({{forloop.counter}})
       
     </script>

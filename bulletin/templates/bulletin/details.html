@@ -38,7 +38,7 @@
 
 	<div class='listing-details-content'><!-- listing details content -->
 		<div id="map-canvas"></div>
-		<div class='js-listing-card-price listing-card-price'>HKD 6,700</div><!-- pricing -->
+		<div class='js-listing-card-price listing-card-price'>HKD {{roomInfo.price}} </div><!-- pricing -->
 
 		<div class='list-item' id='listing-detail-address'><!-- Detail: address -->
 			<div class='row'>
@@ -46,7 +46,7 @@
 					<span class='icon-listing-loc icon-inline'></span>
 				</div>
 				<div class='col-xs-10'>
-					<p class='js-location'>7/F, Wing Yuen Building, Whampoa Estate, Hung Hom, Kowloon</p>
+					<p class='js-location'> {{ roomInfo.address }} </p>
 				</div>
 			</div><!-- end of row -->
 		</div><!-- end of Detail: address -->
@@ -57,7 +57,7 @@
 					<span class='icon-listing-area icon-inline'></span>
 				</div>
 				<div class='col-xs-9'>
-					<p class='js-location'>500sqft net area<br/>(floor plan available)</p>
+					<p class='js-location'>{{ roomInfo.size }}sqft net area<br/>(floor plan available)</p>
 				</div>
 				<div class='col-xs-1' style='margin-top: 1em;'>
 					<span class='btn-next-black'></span>
@@ -218,7 +218,7 @@
 					<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA92yqBQc3NSvA6sHu5-VAY3fIz4i0-VM-_cUZrYb-s6lUqyfvsA' height=84/>
 				</div>
 			</div><!-- end of profile pic -->
-			<p><i><span style='font-weight: 100'>Posted by </span></i> <span class='js-current-renter-name'><span style='font-weight: bold'>Windy Li</span> <span class='icon-gender-f icon-inline'></span></p>
+			<p><i><span style='font-weight: 100'>Posted by </span></i> <span class='js-current-renter-name'><span style='font-weight: bold'> {{ ownerInfo.name }} </span> <span class='icon-gender-f icon-inline'></span></p>
 			<p><i><span style='font-weight: 100'><span class='js-noOfCommonFrients'>3</span> Common friends&nbsp;</span> <span class='js-facebook-common-friends friend'><img src='http://www.worthytoshare.net/wp-content/uploads/2014/03/8876509-lily-pretty-girl1.jpg' height=20/></span><span class='js-facebook-common-friends friend'><img src='http://static.hdw.eweb4.com/media/thumbs/1/120/1190948.jpg' height="20"/></span>
 			<br/>
 			<p class='js-listing-renter-about'>
@@ -228,7 +228,7 @@
 					<li>prefers quiet</li>
 				</ul>
 			</p>
-			<p class='listing-renter-intro js-listing-renter-intro label-grey'><i>Hi, I’m Windy. I’m a full-time UI/UX designer and developer</i></p>
+			<p class='listing-renter-intro js-listing-renter-intro label-grey'><i>Hi, I’m {{ ownerInfo.name }}. I’m a full-time UI/UX designer and developer</i></p>
 		</section><!-- end of Detail: about current renter -->
 
 	</div><!-- end of listing details content -->
