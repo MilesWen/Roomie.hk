@@ -10,24 +10,27 @@
 {% block body_block %}
 	<div class='nav-header'>
 		<div class="row">
+			<div class='col-xs-1' style='padding:0;padding-top:0.4em;margin-left:-5px;'>
+				<a href=''><span class='btn-back'></span></a>
+			</div>
 			<div class='profile-pic col-xs-2'>
 				<div class='image-round-wrapper'>
 					<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA92yqBQc3NSvA6sHu5-VAY3fIz4i0-VM-_cUZrYb-s6lUqyfvsA' height=40/>
 				</div>
 			</div>
-			<div class='headline col-xs-10'>
+			<div class='headline col-xs-9'>
 				<h3 class='js-listing-card-headline'>Clean and friendly female roommate wanted</h3>
 			</div>
 		</div>
 		<div class='row'>
-			<div class='col-xs-2'></div>
-			<div class='col-xs-10'>
+			<div class='col-xs-3'></div>
+			<div class='col-xs-9'>
 				<h4 class='header-subline js-listing-card-subline'>In 15 days / Negotiable</h4>
 			</div>
 		</div>
 		<div class='row'>
-			<div class='col-xs-2'></div>
-			<div class='col-xs-10'>
+			<div class='col-xs-3'></div>
+			<div class='col-xs-9'>
 				<p class='js-listing-card-existingRoommates'>Existing roommate: 1<span class='icon-gender-f icon-inline'></span></p>
 			</div>
 		</div>
@@ -189,7 +192,7 @@
 								</span>
 							</div>
 							<div class='item-price'>
-								<span class='js-furniturePrice'>HKD 300</span>
+								<span class='js-furniturePrice'>HKD300</span>
 							</div>
 						</li>
 						<li class='text-center'>
@@ -204,6 +207,29 @@
 				</div>
 			</div>
 		</div><!-- end of Available furniture in the room to rent -->
+
+		<div class='list-item' id='listing-detail-bookmark'><!-- Detail: bookmark -->
+			<a class='btn-long-round orange-line' href=#><span class='bookmark'></span> Bookmark this listing</a>
+		</div><!-- end of Detail: bookmark -->
+
+		<section id='listing-current-renter' class='grey text-center'><!-- Detail: about current renter -->
+			<div class='profile-pic'><!-- profile pic -->
+				<div class='image-round-wrapper-bigger'>
+					<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA92yqBQc3NSvA6sHu5-VAY3fIz4i0-VM-_cUZrYb-s6lUqyfvsA' height=84/>
+				</div>
+			</div><!-- end of profile pic -->
+			<p><i><span style='font-weight: 100'>Posted by </span></i> <span class='js-current-renter-name'><span style='font-weight: bold'>Windy Li</span> <span class='icon-gender-f icon-inline'></span></p>
+			<p><i><span style='font-weight: 100'><span class='js-noOfCommonFrients'>3</span> Common friends&nbsp;</span> <span class='js-facebook-common-friends friend'><img src='http://www.worthytoshare.net/wp-content/uploads/2014/03/8876509-lily-pretty-girl1.jpg' height=20/></span><span class='js-facebook-common-friends friend'><img src='http://static.hdw.eweb4.com/media/thumbs/1/120/1190948.jpg' height="20"/></span>
+			<br/>
+			<p class='js-listing-renter-about'>
+				<ul class='listing-renter-about'>
+					<li>At work</li>,
+					<li>welcomes pet</li>,
+					<li>prefers quiet</li>
+				</ul>
+			</p>
+			<p class='listing-renter-intro js-listing-renter-intro label-grey'><i>Hi, I’m Windy. I’m a full-time UI/UX designer and developer</i></p>
+		</section><!-- end of Detail: about current renter -->
 
 	</div><!-- end of listing details content -->
 
