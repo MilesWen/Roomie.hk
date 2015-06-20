@@ -12,8 +12,11 @@ urlpatterns = [
 	# Strings inside <> defines the name that will be used to identify
 	#	the matched pattern
 
-	# ex: /bulletin/
-	url(r'^$', views.login, name='login'), # login page
+#	# ex: /bulletin/
+#	url(r'^index/$', views.login, name='login'), # login page
+
+	# ex: /bulletin/login_check/
+	url(r'^login_check$', views.login_check, name='login_check'), 
 
 	# ex: /bulletin/profile/
 	url(r'^profile/$', views.profile, name='profile'), # profile page
@@ -26,4 +29,7 @@ urlpatterns = [
 
 	# ex: /bulletin/details/
 	url(r'^details/$', views.details, name="details"), # details page
+
+	# ex: /bulletin/details/
+	url(r'^social_login/$', views.social_login, name='social_login'),
 ]

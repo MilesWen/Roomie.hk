@@ -1,8 +1,21 @@
 <!DOCTYPE html>
+
 {% extends 'bulletin/base.html' %} <!-- using the base.html interface -->
 
 {% load staticfiles %}
 
 {% block title %} Login pages {% endblock %}
 
-{% block body_block %} Login {% endblock %}
+{% block body_block %}
+<section class="container">
+	<div class="login">
+      <h1>Login to Web App</h1>
+      <form method="post" action="/bulletin/login_check" name="login">{% csrf_token %}    
+        <p><input type="text" name="username" value="" placeholder="Username or Email"></p>
+        <p><input type="password" name="password" value="" placeholder="Password"></p>
+
+        <p class="submit"><input type="submit" name="commit" value="Login"></p>
+      </form>
+    </div>
+</section>
+{% endblock %}
