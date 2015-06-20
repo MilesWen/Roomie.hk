@@ -9,6 +9,10 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta name="description" content="">
 		<meta name="author" content="">
+		<meta name="apple-mobile-web-app-capable" content="yes" /><!-- hide safari address bar -->
+		<!-- <meta name="apple-mobile-web-app-status-bar-style" content="white" /> -->
+		<link rel="apple-touch-icon" href="{% static 'bulletin/assets/icon-app.png'%} "/>
+		<link rel="apple-touch-startup-image" href="{% static 'bulletin/assets/launch-image.png'%}">
 
 		<!-- font -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
@@ -28,6 +32,8 @@
 
 	  {% block head_block %}
 	  {% endblock %}
+	  <!-- Google maps API -->
+	  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 	</head>
 
 	<body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">
