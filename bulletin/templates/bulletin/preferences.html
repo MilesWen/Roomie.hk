@@ -3,12 +3,17 @@
 {% load staticfiles %}
 {% block title %} Preferences pages {% endblock %}
 
-{% block head_block %}
-	
-{% endblock %}
+{% block head_block %} {% endblock %}
 
-{% block body_block %} Preferences 
+{% block body_block %}
+		<div class="pt-triggers">
+			<button id="iterateEffects" class="pt-touch-button">Show next page transition</button>
+		</div><!-- /triggers -->
 
-Test test
+		<div id="pt-main" class="pt-perspective">
+			<div class="pt-page pt-page-1"><h1><span>Fuck it! </h1></div>
+			<div class="pt-page pt-page-2"><h1><span>Fuck it again! </h1></div>
+			<div class="pt-page pt-page-3"><h1><span>One more time!!!</h1></div>
+		</div>
 
 {% endblock %}

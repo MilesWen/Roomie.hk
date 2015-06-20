@@ -5,7 +5,8 @@
 		<title> {% block title %} Login {% endblock %} </title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta name="description" content="">
 		<meta name="author" content="">
 
@@ -13,11 +14,17 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
 
 		<!-- lib styles -->
-	  <link href="{% static 'bulletin/css/lib/bootstrap.min.css'%} " rel="stylesheet" media="screen">
-	  <link href="{% static 'bulletin/css/lib/hamburger.css'%} " rel="stylesheet" media="screen">
-	  <link href="{% static 'bulletin/css/lib/range-selector.css'%} " rel="stylesheet" media="screen">
-	  <!-- custom styles -->
-	  <link href="{% static 'bulletin/css/style.css'%} " rel="stylesheet" media="screen">
+		<link href="{% static 'bulletin/css/lib/bootstrap.min.css'%} " rel="stylesheet" media="screen">
+		<link href="{% static 'bulletin/css/lib/hamburger.css'%} " rel="stylesheet" media="screen">
+		<link href="{% static 'bulletin/css/lib/range-selector.css'%} " rel="stylesheet" media="screen">
+			<!-- From page transitions -->
+		<link rel="stylesheet" type="text/css" href="{% static 'bulletin/css/lib/page-transition.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'bulletin/css/lib/animations.css' %}" />
+		<!-- custom styles -->
+		<link href="{% static 'bulletin/css/style.css'%} " rel="stylesheet" media="screen">
+
+		<!-- Run animations -->
+		<script src="{% static 'bulletin/js/modernizr.custom.js' %}"></script>
 
 	  {% block head_block %}
 	  {% endblock %}
@@ -34,5 +41,8 @@
 		<script src="{% static 'bulletin/js/bootstrap.min.js' %}"></script>
 		<script src="{% static 'bulletin/js/hamburger.js' %}"></script>
 		<script src="{% static 'bulletin/js/range-selector.js' %}"></script>
+		<!-- Page transition js -->
+		<script src="{% static 'bulletin/js/jquery.dlmenu.js' %}"></script>
+		<script src="{% static 'bulletin/js/pagetransitions.js' %}"></script>
 	</body>
 </html>
