@@ -6,21 +6,79 @@
 {% block head_block %} {% endblock %}
 
 {% block body_block %}
-		<div class="pt-triggers">
-			<button id="iterateEffects" class="pt-touch-button">Show next page transition</button>
-		</div><!-- /triggers -->
 
-		<div id="pt-main" class="pt-perspective">
-			<div class="pt-page pt-page-1"><h1><span>Fuck it! </h1></div>
+		<div id="pt-main" class="pt-perspective"><!-- Form pages wrapper -->
+			<div class="pt-page text-center"><!-- Form page 1 -->
+				<div class='row' style='margin-top: 82px;'><!-- Form: profile pic -->
+					<div class='profile-pic'>
+						<div class='image-round-wrapper-biggest'>
+							<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA92yqBQc3NSvA6sHu5-VAY3fIz4i0-VM-_cUZrYb-s6lUqyfvsA' height=118/>
+						</div>
+					</div>
+				</div><!-- end of Form: profile pic -->
+				<div class='roomie-form'><!-- Form -->
+					<div class='row roomie-form-field'>
+						<div class='col-xs-4'>
+							<p class='label-grey'>Full name</p>
+						</div>
+						<div class='col-xs-8'>
+							<input class='js-full-name' placeholder='' value='Windy Li' type='text'/>
+						</div>
+					</div><!-- end of row -->	
+					<div class='row roomie-form-field'>
+						<div class='col-xs-4'>
+							<p class='label-grey'>Age</p>
+						</div>
+						<div class='col-xs-3'>
+							<input class='js-age' placeholder='' value='26' type='text'/>
+						</div>
+						<div class='col-xs-5' style='padding-top:0.3em;padding-right:0;'>
+							<img src='{% static 'bulletin/assets/adder-age.png' %}' style='float: right'>
+						</div>
+					</div><!-- end of row -->	
+					<div class='row roomie-form-field'>
+						<div class='col-xs-4'>
+							<p class='label-grey'>Gender</p>
+						</div>
+						<div class='col-xs-4'>
+							<p class='js-gender-text'>Female</p>
+						</div>
+						<div class='col-xs-4 js-gender-switch' style='padding-top:0.3em;padding-right:0;'>
+							<img src='{% static 'bulletin/assets/switch-female.svg' %}' style='max-height:40px;' class='js-gender-f'>
+							<img src='{% static 'bulletin/assets/switch-male.svg' %}' style='max-height:40px' class='js-gender-m hidden'>
+						</div>
+					</div><!-- end of row -->	
+				</div><!-- end of Form -->
+			</div><!-- end of Form page 1 -->
 			<div class="pt-page pt-page-2"><h1><span>Fuck it again! </h1></div>
 			<div class="pt-page pt-page-3"><h1><span>One more time!!!</h1></div>
-		</div>
+		</div><!-- end of Form pages wrapper -->
+
+		<div class="pt-triggers">
+			<a id="iterateEffects" class='orange font18'>Next <span class='btn-next-orange icon-inline'></span></a>
+		</div><!-- /triggers -->
 
 {% endblock %}
 
-<style type="text/css">
-h1 {font-family:Georgia, serif;}
-</style>
+{% block custome_js_block %}
+	<!-- gender switch -->
+	<script>
+		$('.js-gender-switch').click(function(){
+			if($('.js-gender-f').hasClass('hidden')) {
+				$('.js-gender-f').removeClass('hidden')
+				$('.js-gender-m').addClass('hidden')
+				$('.js-gender-text').text('Female')
+				console.log('to female')
+			} else {
+				$('.js-gender-m').removeClass('hidden')
+				$('.js-gender-f').addClass('hidden')
+				$('.js-gender-text').text('Male')
+				console.log('to male')
+			}
+		})
+	</script>
+	<!-- end of gender switch -->
+{% endblock %}
 
 {{ userInfo.id }}
 {% if userInfo  %}

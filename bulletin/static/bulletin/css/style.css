@@ -17,6 +17,9 @@ h3 {
 	line-height: 1.3;
 	font-weight: 600;
 }
+input:focus {
+	outline: none;
+}
 a {
 	color: #333;
 	text-decoration: none;
@@ -24,11 +27,20 @@ a {
 a:hover {
 	text-decoration: none;
 }
+a.orange {
+	color: #f7931e;
+}
+.font18 {
+	font-size: 18px;
+}
 .left {
 	float: left;
 }
 .label-grey {
 	color: #999;
+}
+.hidden {
+	display: none;
 }
 
 /* listing template */
@@ -277,6 +289,13 @@ ul.scrollable-view li {
 	overflow: hidden;
 	display: inline-block;
 }
+.profile-pic .image-round-wrapper-biggest {
+	width: 118px;
+	height: 118px;
+	border-radius: 60px;
+	overflow: hidden;
+	display: inline-block;
+}
 section {
 	padding: 1.5em 1em;
 }
@@ -302,6 +321,28 @@ ul.listing-renter-about li {
 	display: inline-block;
 }
 /* end of listing details page */
+
+/* Settings */
+.roomie-form {
+	padding-top: 2em;
+	width: 270px;
+	margin: 0 auto;
+}
+.roomie-form .roomie-form-field {
+	padding: 0.8em 1em;
+	text-align: left;
+}
+.roomie-form .roomie-form-field.row {
+	border-bottom: 1px solid #ddd;
+}
+.roomie-form .roomie-form-field .col-xs-4, .roomie-form .roomie-form-field .col-xs-3, .roomie-form .roomie-form-field .col-xs-8, .roomie-form .roomie-form-field .col-xs-8 {
+	padding: 1em 0 0.3em;
+}
+.roomie-form .roomie-form-field input {
+	border: none;
+	background: none;
+}
+/* end of Settings */
 
 /* App icons */
 .icon-inline {
