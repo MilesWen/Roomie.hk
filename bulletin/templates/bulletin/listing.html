@@ -6,56 +6,37 @@
 
 {% block body_id %}roomie-listing-page{% endblock %}
 {% block body_block %}
-	<!-- Hamburger -->
-    <nav id="menu" class="menu">
-      <a href="https://github.com/mango/slideout" target="_blank">
-        <header class="menu-header">
-          <span class="menu-header-title">#</span>
-        </header>
-      </a>
-      <!-- Menu area -->
-      <section class="menu-section">
-        <ul class="menu-section-list">
-          <li><a href="" target="_blank">Profile</a></li>
-          <li><a href="" target="_blank">Search</a></li>
-          <li><a href="" target="_blank">Add my place</a></li>
-        </ul>
-      </section>
-      <section class="menu-section">
-        <ul class="menu-section-list">
-          <li><a href="" target="_blank">Message</a></li>
-          <li><a href="" target="_blank">Bookmarks</a></li>
-        </ul>
-      </section>
-      <section class="menu-section">
-        <ul class="menu-section-list">
-          <li><a href="" target="_blank">Logout</a></li>
-        </ul>
-      </section>
-      <!-- end of Menu area -->
-    </nav>
-    <!-- end of Hamburger -->
+  {% if seeker %}
+    <ul>
+        <li>Seeker id: {{seeker.id}}</li>
+        <li>Seeker name: {{seeker.name}}</li>
+        <li>Seeker gender: {{seeker.gender}}</li>
+        <li>Seeker's roommate gender preference: {{seeker.gender_mate}}</li>
+        <li>Seeker's district preference: {{seeker.district}}</li>
+        <li>Seeker's isPrivate preference: {{seeker.isPrivate}}</li>
+        <li>Seeker's price gender preference: {{seeker.price}}</li>
+        
+    </ul>
 
-    <div id="panel" class="panel purple-bg app-container"><!-- App body -->
-      <header class="panel-header">
-        <button class="btn-hamburger js-slideout-toggle"></button>
-      </header>
-      <div class='app-content' style='display:block;height:568px;'><!-- App content -->
-      	
-      </div><!-- end of App content -->
-    </div><!-- end of App body -->
+    {% if roomList %}
+      <ul>
+          {% for room in roomList %}
+            <li>Room:   {{ room.id }}</li>
+            <li>Owner:   {{ room.user }}</li>
+            <li>Owner gender:   {{ room.user.gender }}</li>
+            <li>Room district:   {{ room.district }}</li>
+            <li>Room isPrivate:   {{ room.isPrivate }}</li>
+            <li>Room price:   {{ room.price }}</li>
+          {% endfor %}
+      </ul>
+    
+    {% else %}
+        The specified roomList  does not exist!
+    {% endif %}
+  
+  {% else %}
+      The specified seeker does not exist!
+  {% endif %}
 
-    <!-- Hamburger menu script -->
-    <script>
-      window.onload = function() {
-        document.querySelector('.js-slideout-toggle').addEventListener('click', function() {
-          slideout.toggle()
-        })
-
-        document.querySelector('.menu').addEventListener('click', function(eve) {
-          if (eve.target.nodeName === 'A') { slideout.close() }
-        })
-      }
-    </script>
-    <!-- end of Hamburger menu script -->
 {% endblock %}
+
