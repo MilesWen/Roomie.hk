@@ -232,6 +232,75 @@ ul.scrollable-view li {
 	color: white;
 	padding: 0.4em 1em;
 }
+.item-price span {
+	background: rgba(247,147,30,0.8);
+	border-radius: 3px;
+	color: white;
+	margin-top: 4px;
+	padding: 0.2em 0.4em;
+	display: inline-block;
+	font-size: 13px;
+	font-weight: 700;
+}
+.btn-long-round {
+	padding: 0.8em 1em;
+	font-size: 17px;
+	border-radius: 40px;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	-webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-repeat: no-repeat;
+}
+.btn-long-round span.bookmark {
+	width: 36px;
+	height: 36px;
+	display: inline-block;
+	vertical-align: middle;
+	background-image: url('../assets/btn-bookark.svg');
+}
+.btn-long-round.orange-line {
+	border: 1px solid rgba(247,147,30,0.8);
+}
+.btn-long-round.orange-line:hover {
+	background: rgba(247,147,30,0.8);
+}
+.btn-long-round.orange-fill {
+	background: rgba(247,147,30,0.8);
+	color: white;
+}
+.profile-pic .image-round-wrapper-bigger {
+	width: 84px;
+	height: 84px;
+	border-radius: 50px;
+	overflow: hidden;
+	display: inline-block;
+}
+section {
+	padding: 1.5em 1em;
+}
+.grey {
+	background: #f7f7f7;
+}
+span.friend {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+	border-radius: 10px;
+	overflow: hidden;
+	vertical-align: middle;
+}
+ul.listing-renter-about {
+	list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+}
+ul.listing-renter-about li {
+	display: inline-block;
+}
 /* end of listing details page */
 
 /* App icons */
