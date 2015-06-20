@@ -135,7 +135,7 @@ def listing(request, user_id):
 
 # return bulletin details
 # @login_required(login_url='/')
-def details(request, room_id):
+def details(request, room_id, user_id):
 	# scenario: user views the details of a room and its owner details
 	context_dict = {}
 	
@@ -143,6 +143,7 @@ def details(request, room_id):
 		room = Room.objects.get(id=room_id)
 		context_dict['roomInfo'] = room
 		context_dict['ownerInfo'] = room.user
+		context_dict['seeker'] = user_id
 	
 	except Room.DoesNotExist:
 		pass
