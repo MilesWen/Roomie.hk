@@ -137,6 +137,74 @@
 			</div>
 		</div><!-- end of Detail: shared furniture/utilities -->
 
+		<div class='carousel-images-area'><!-- Detail: images -->
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner">
+			    <div class="item active">
+						<img src='http://www4.comp.polyu.edu.hk/~icba/doc/superior%20room.JPG'/>
+			    </div>
+			    <div class="item">
+			      <img src='http://www4.comp.polyu.edu.hk/~icba/doc/Deluxe%20room.JPG'/>
+			    </div>
+			    <div class="item">
+			      <img src='http://cache.carlsonhotels.com/ow-cms/pkp/images/hotels/GBLEEDS/CMSNEW/SuperiourRoom.jpg'/>
+			    </div>
+			  </div>
+		  </div>
+		  <div class='js-noOfImages label-noOfImages'>
+				<span class='icon-inline icon-camera'></span> 1/3
+			</div>
+		</div><!-- end of Detail: images -->
+
+		<div class='list-item' id='listing-detail-intro'><!-- Detail: intro -->
+			<div class='row'>
+				<div class='col-xs-10'>
+					<p class='js-intro label-grey'><i>The rent lease started from last year August and should last till 2016 August. It is located on mid-level floor and facing a quiet street ... </i></p>
+				</div>
+				<div class='col-xs-1' style='margin-top: 1em;'>
+					<span class='btn-next-black'></span>
+				</div>
+			</div><!-- end of row -->
+		</div><!-- end of Detail: intro -->
+
+		<div class='list-item' id='listing-detail-furnitureInRoom'><!-- Detail: Available furniture in the room to rent -->
+			<p class='label-grey'>Available furniture in the room to rent</p>
+			<div class='scrollable'>
+				<div class='scrolling-area'>
+					<ul class='scrollable-view'>
+						<li class='text-center'>
+							<div><span class='icon-doubleBed'></span></div>
+							<div>
+								<span class='js-furnitureType'>
+									double beds
+								</span>
+							</div>
+						</li>
+						<li class='text-center'>
+							<div><span class='icon-desk'></span></div>
+							<div>
+								<span class='js-furnitureType'>
+									desk
+								</span>
+							</div>
+							<div class='item-price'>
+								<span class='js-furniturePrice'>HKD 300</span>
+							</div>
+						</li>
+						<li class='text-center'>
+							<div><span class='icon-drawer'></span></div>
+							<div>
+								<span class='js-furnitureType'>
+									cabinet
+								</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- end of Available furniture in the room to rent -->
+
 	</div><!-- end of listing details content -->
 
 	<script>
@@ -166,7 +234,16 @@
 	</script>
 	<!-- end of Google maps in listing card -->
 {% endblock %}
->>>>>>> weiningg
+
+{% block custome_js_block %}
+	<!-- Carousel of images -->
+	<script>
+    $("#carousel-example-generic").carousel({
+		  swipe: 50 // percent-per-second, default is 50. Pass false to disable swipe
+		}) 
+	</script><!-- end of Carousel of images -->
+{% endblock %}
+
 
 <!-- Delete the following codes in production -->
 
