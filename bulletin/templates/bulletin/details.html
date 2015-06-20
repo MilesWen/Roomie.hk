@@ -6,22 +6,43 @@
 
 {% block title %} Details pages {% endblock %}
 
+<<<<<<< HEAD
 {% block body_block %} Details:
 	{% if roomInfo  %}
 		{% if not room.Info.user %}
 			Damn, who owns this shitty house?
 		{% else %}
 			Owner_id:	{{ ownerInfo.name }}
+=======
+{% block body_block %} Details 
+	{{ roomInfo.id }}
+	{% if roomInfo  %}
+		hahaha
+		{% if not roomInfo.user %}
+			Damn, who owns this shitty house?
+		{% else %}
+			{{ roomInfo.user.name }}
+			Owner_id:	{{ ownerInfo.name }}
+			
+>>>>>>> origin/jieming
 			Addr:		{{ roomInfo.address }}
 			Dist:		{{ roomInfo.district }}
 			Latitude:	{{ roomInfo.latitude }}
 			Longitude:	{{ roomInfo.longitude }}
 			Private?:	{{ roomInfo.isPrivate }}
 			Price:		{{ roomInfo.price }}
+<<<<<<< HEAD
 			Period:		{{ roomInfo.period }}
 			MoveIn:		{{ roomInfo.moveInDate }}
 			Size:		{{ roomInfo.size }}
 			NumMates:	{{ roomInfo.numExistingMates }}
+=======
+			Period:		{{ roomInfo.stayPeriod }}
+			MoveIn:		{{ roomInfo.moveInDate }}
+			Size:		{{ roomInfo.size }}
+			NumMates:	{{ roomInfo.numExistingMates }}
+
+>>>>>>> origin/jieming
 			<img src="{{ roomInfo.pictureURL }}" alt="Room Picture">
 			<!-- Info about owner -->
 			Information about Owner:
