@@ -6,41 +6,39 @@
 
 {% block title %} Details pages {% endblock %}
 
-{% block body_block %} Details {% endblock %}
+{% block body_block %} Details:
+	{% if roomInfo  %}
+		{% if not room.Info.user %}
+			Damn, who owns this shitty house?
+		{% else %}
+			Owner_id:	{{ ownerInfo.name }}
+			Addr:		{{ roomInfo.address }}
+			Dist:		{{ roomInfo.district }}
+			Latitude:	{{ roomInfo.latitude }}
+			Longitude:	{{ roomInfo.longitude }}
+			Private?:	{{ roomInfo.isPrivate }}
+			Price:		{{ roomInfo.price }}
+			Period:		{{ roomInfo.period }}
+			MoveIn:		{{ roomInfo.moveInDate }}
+			Size:		{{ roomInfo.size }}
+			NumMates:	{{ roomInfo.numExistingMates }}
+			<img src="{{ roomInfo.pictureURL }}" alt="Room Picture">
+			<!-- Info about owner -->
+			Information about Owner:
+			Name:		{{ ownerInfo.name }}
+			Age:		{{ ownerInfo.age }}
+			Gender:		{{ ownerInfo.gender }}
+			Occupation:	{{ ownerInfo.occupation }}
+			Pet?:		{{ ownerInfo.hasPet }}
+			Smoke?:		{{ ownerInfo.smoker }}
+			Quiet?:		{{ ownerInfo.quiet }}
 
-{% if roomInfo  %}
-	{% if !room.Info.user %}
-		Damn, who owns this shitty house?
-	{% else %}
-		Owner_id:	{{ ownerInfo.name }}
-		Addr:		{{ roomInfo.address }}
-		Dist:		{{ roomInfo.district }}
-		Latitude:	{{ roomInfo.latitude }}
-		Longitude:	{{ roomInfo.longitude }}
-		Private?:	{{ roomInfo.isPrivate }}
-		Price:		{{ roomInfo.price }}
-		Period:		{{ roomInfo.period }}
-		MoveIn:		{{ roomInfo.moveInDate }}
-		Size:		{{ roomInfo.size }}
-		NumMates:	{{ roomInfo.numExistingMates }}
-		<img scr="{{ roomInfo.pictureURL }}" alt="Room Picture">
-		<!-- Info about owner -->
-		{% comment %}
-		Information about Owner:
-		Name:		{{ ownerInfo.name }}
-		Age:		{{ ownerInfo.age }}
-		Gender:		{{ ownerInfo.gender }}
-		Occupation:	{{ ownerInfo.occupation }}
-		Pet?:		{{ ownerInfo.hasPet }}
-		Smoke?:		{{ ownerInfo.smoker }}
-		Quiet?:		{{ ownerInfo.quiet }}
-
-		Information about Onwer Preference:
-		Preferred Gender:		{{ ownerInfo.gender_mate }}
-		Preferred Occupation:	{{ ownerInfo.occuptaion_mate }}
-		Prefer Pet?				{{ ownerInfo.hasPet_mate }}
-		Prefer smoker?			{{ ownerInfo.smoker_mate }}
-		Prefer quiet?			{{ ownerInfo.quiet_mate }}
-		{% endcomment %}
+			Information about Onwer Preference:
+			Preferred Gender:		{{ ownerInfo.gender_mate }}
+			Preferred Occupation:	{{ ownerInfo.occuptaion_mate }}
+			Prefer Pet?				{{ ownerInfo.hasPet_mate }}
+			Prefer smoker?			{{ ownerInfo.smoker_mate }}
+			Prefer quiet?			{{ ownerInfo.quiet_mate }}
+		{% endif %}
 	{% endif %}
-{% endif %}
+{% endblock %}
