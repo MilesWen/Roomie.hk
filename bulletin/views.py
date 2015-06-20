@@ -13,15 +13,15 @@ def login_FB(request):
 	return render(request, 'bulletin/login.html')
 
 # show profile of user
-def profile(request):
+def profile(request, user_id):
 	return render(request, 'bulletin/profile.html')
 
 # ask for preference (filtering info) from user
-def preferences(request):
+def preferences(request, user_id):
 	return render(request, 'bulletin/preferences.html')
 
 # return bulletin listing
-def listing(request):
+def listing(request, user_id):
 	return render(request, 'bulletin/listing.html')
 
 # return bulletin details
