@@ -342,16 +342,16 @@ ul.listing-renter-about li {
 	border: none;
 	background: none;
 }
-.tags-selector-group {
+.tags-selector-group, .range-selector-group {
 	padding: 1.5em 0 1em 0;
 }
-ul.tags-selector {
+ul.tags-selector, ul.exclusive-tags-selector {
 	list-style-type: none;
   margin: 0; 
   margin-bottom: 5px;
   padding: 0;
 }
-ul.tags-selector li {
+ul.tags-selector li, ul.exclusive-tags-selector li {
 	display: inline-block;
 	padding: 0.5em 1.5em;
 	border: 1px solid #ddd;
@@ -360,10 +360,10 @@ ul.tags-selector li {
 	margin-right: 0.2em;
 	color: #ddd;
 }
-ul.tags-selector li:hover {
+ul.tags-selector li:hover, ul.exclusive-tags-selector li:hover {
 	cursor: pointer;
 }
-ul.tags-selector li.active {
+ul.tags-selector li.active, ul.exclusive-tags-selector li.active {
 	color: #f7931e;
 	border-color: #f7931e
 }

@@ -438,8 +438,8 @@
             if (this.options.type === "single") {
                 this.$cache.cont.append(single_html);
                 this.$cache.s_single = this.$cache.cont.find(".single");
-                this.$cache.from[0].style.visibility = "hidden";
-                this.$cache.to[0].style.visibility = "hidden";
+                // this.$cache.from[0].style.visibility = "hidden";
+                // this.$cache.to[0].style.visibility = "hidden";
                 this.$cache.shad_single = this.$cache.cont.find(".shadow-single");
             } else {
                 this.$cache.cont.append(double_html);
@@ -1176,22 +1176,22 @@
                     max = Math.max(single_left, to_left);
 
                 if (this.labels.p_from_left + this.labels.p_from >= this.labels.p_to_left) {
-                    this.$cache.from[0].style.visibility = "hidden";
-                    this.$cache.to[0].style.visibility = "hidden";
+                    // this.$cache.from[0].style.visibility = "hidden";
+                    // this.$cache.to[0].style.visibility = "hidden";
                     this.$cache.single[0].style.visibility = "visible";
 
                     if (this.result.from === this.result.to) {
-                        this.$cache.from[0].style.visibility = "visible";
-                        this.$cache.single[0].style.visibility = "hidden";
+                        // this.$cache.from[0].style.visibility = "visible";
+                        // this.$cache.single[0].style.visibility = "hidden";
                         max = to_left;
                     } else {
-                        this.$cache.from[0].style.visibility = "hidden";
+                        // this.$cache.from[0].style.visibility = "hidden";
                         this.$cache.single[0].style.visibility = "visible";
                         max = Math.max(single_left, to_left);
                     }
                 } else {
-                    this.$cache.from[0].style.visibility = "visible";
-                    this.$cache.to[0].style.visibility = "visible";
+                    // this.$cache.from[0].style.visibility = "visible";
+                    // this.$cache.to[0].style.visibility = "visible";
                     this.$cache.single[0].style.visibility = "hidden";
                 }
 
@@ -1975,10 +1975,10 @@ $(function () {
         $("#range").ionRangeSlider({
             hide_min_max: true,
             keyboard: true,
-            min: 0,
-            max: 5000,
-            from: 1000,
-            to: 4000,
+            min: 1000,
+            max: 20000,
+            from: 5000,
+            to: 10000,
             type: 'double',
             step: 1,
             // prefix: "$",
