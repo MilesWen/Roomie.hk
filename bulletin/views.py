@@ -59,7 +59,7 @@ def social_login(request):
 			userFriend = Friend(user=user, friend=str(frdLst))
 			userFriend.save()
 			
-		return profile(request)
+		return listing(request)
 	else:
 		return None
 
@@ -100,7 +100,9 @@ def listing(request):
 	context_dict = {}
 	
 	try:
+
 		seeker = User.objects.get(id=request.session['userid'])
+		#seeker = User.objects.get(id="1")
 
 		#preference attributes (to owners): gender_mate, occupation_mate, hasPet_mate, smoker_mate, quiet_mate,
 		#preference attributes (to seekers): same as above
@@ -118,6 +120,7 @@ def listing(request):
 		context_dict['seeker'] = seeker
 	
 	except User.DoesNotExist, Room.DoesNotExist:
+		render(request, 'bulletin/social_login.html')
 		pass
 	
 	return render(request, 'bulletin/listing.html', context_dict)
