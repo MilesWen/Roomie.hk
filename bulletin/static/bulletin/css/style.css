@@ -342,6 +342,31 @@ ul.listing-renter-about li {
 	border: none;
 	background: none;
 }
+.tags-selector-group {
+	padding: 1.5em 0 1em 0;
+}
+ul.tags-selector {
+	list-style-type: none;
+  margin: 0; 
+  margin-bottom: 5px;
+  padding: 0;
+}
+ul.tags-selector li {
+	display: inline-block;
+	padding: 0.5em 1.5em;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	margin-bottom: 0.6em;
+	margin-right: 0.2em;
+	color: #ddd;
+}
+ul.tags-selector li:hover {
+	cursor: pointer;
+}
+ul.tags-selector li.active {
+	color: #f7931e;
+	border-color: #f7931e
+}
 /* end of Settings */
 
 /* App icons */
@@ -358,9 +383,9 @@ ul.listing-renter-about li {
 }
 .icon-setup-loc {
 	display: inline-block;
-	width: 48px;
-	height: 48px;
-	zoom:0.5;
+	width: 44px;
+	height: 44px;
+	zoom:0.4;
 	background: url('../assets/icons.png') 0 0;
 }
 .icon-setup-bedroom {
