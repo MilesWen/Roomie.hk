@@ -466,7 +466,8 @@ var beforecloseEvent = false;
 var closeEvent = false;
 var slideout = new Slideout({
   'panel': doc.getElementById('panel'),
-  'menu': doc.getElementById('menu')
+  'menu': doc.getElementById('menu'),
+  'touch': false
 });
 
 slideout
