@@ -103,6 +103,37 @@
 					</div><!-- end of tags selector: Preferred room type -->
 				</section>
 			</div><!-- end of Form page 3 -->
+
+			<div class="pt-page pt-page-4"><!-- Form page 4 -->
+				<section>
+					<h1>Budget and timeline ...</h1>
+					<div class='range-selector-group'><!-- selector group -->
+						<p class='label-grey smaller'>Budget <span class='icon-setup-price icon-inline'></span></p>
+						<div style="position: relative; padding: 1.5em 0 0;"><!-- Range selector -->
+					    <div>
+					       <input type="text" id="range" value="" name="range" />
+					    </div>
+						</div><!-- end of Range selector -->
+					</div><!-- end of selector group -->
+					<div class='tags-selector-group' id='tag-selector-group-4'><!-- tags selector: move in time -->
+						<p class='label-grey smaller'>Move in time <span class='icon-setup-time icon-inline'></span></p>
+						<ul class='exclusive-tags-selector' id='tag-selector-4'>
+							<li class='js-toggle js-immediately' name='immediately'>Immediately</li>
+							<li class='active js-toggle js-inAMonth' name='inAMonth'>In a month</li>
+						</ul>
+						<a href=#>+ Specify</a>
+					</div><!-- end of tags selector: move in time -->
+					<div class='tags-selector-group' id='tag-selector-group-5'><!-- tags selector: staying period -->
+						<p class='label-grey smaller'>Preferable staying period <span class='icon-setup-period icon-inline'></span></p>
+						<ul class='exclusive-tags-selector' id='tag-selector-5'>
+							<li class='js-toggle js-shortTerm'>Short-term</li>
+							<li class='active js-toggle js-longTerm'>Long-term</li>
+						</ul>
+						<a href=#>+ Specify</a>
+					</div><!-- end of tags selector: staying period -->
+				</section>
+			</div><!-- end of Form page 4 -->
+
 		</div><!-- end of Form pages wrapper -->
 
 		<div class="pt-triggers">
@@ -154,7 +185,8 @@
 				, "furnished": false
 				, "2bedRooms": false
 				, "3bedRooms": false
-			}
+			}, moveInTime = "inAMonth"
+			, stayingPeriod = ""
 		$('ul.tags-selector li').click(function(){
 			var name=$(this).attr('name')
 			if($(this).hasClass('active')) {
@@ -175,8 +207,47 @@
 					preferredRoomType[name] = true
 			}
 		})
+		$('ul#tag-selector-4 li').click(function(){
+			if($(this).hasClass('active')) {
+				if($('.js-immediately').hasClass('active'))
+					$('.js-immediately').removeClass('active')
+				else
+					$('.js-inAMonth').removeClass('active')
+				moveInTime = ""
+			} else {
+				moveInTime = $(this).attr('name')
+				if ((!$('.js-immediately').hasClass('active')) && (!$('.js-inAMonth').addClass('active'))) {
+				} else {
+					if($('.js-immediately').hasClass('active'))
+						$('.js-immediately').removeClass('active')
+					else
+						$('.js-inAMonth').removeClass('active')
+				}
+				$(this).addClass('active')
+			}
+	 	})
+		$('ul#tag-selector-5 li').click(function(){
+			if($(this).hasClass('active')) {
+				if($('.js-shortTerm').hasClass('active'))
+					$('.js-shortTerm').removeClass('active')
+				else
+					$('.js-longTerm').removeClass('active')
+				stayingPeriod = ""
+			} else {
+				stayingPeriod = $(this).attr('name')
+				if ((!$('.js-shortTerm').hasClass('active')) && (!$('.js-longTerm').addClass('active'))) {
+				} else {
+					if($('.js-shortTerm').hasClass('active'))
+						$('.js-shortTerm').removeClass('active')
+					else
+						$('.js-longTerm').removeClass('active')
+				}
+				$(this).addClass('active')
+			}
+	 	})
 	</script>
 	<!-- end of tags selector -->
+	<script src="{% static 'bulletin/js/submit-form.js' %}"></script>
 {% endblock %}
 
 {{ userInfo.id }}
