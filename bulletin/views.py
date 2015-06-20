@@ -13,15 +13,35 @@ def login_FB(request):
 	return render(request, 'bulletin/login.html')
 
 # show profile of user
-def profile(request):
-	return render(request, 'bulletin/profile.html')
+def profile(request, user_id):
+	# scenario: user wants to check the profile of the roomate/room owner
+	context_dict = {}
+
+	try:
+		user = User.objects.get(id=user_id)
+		context_dict['userInfo'] = user
+
+	except User.DoesNotExist:
+		pass
+
+	return render(request, 'bulletin/profile.html',context_dict)
 
 # ask for preference (filtering info) from user
-def preferences(request):
-	return render(request, 'bulletin/preferences.html')
+def preferences(request, user_id):
+	context_dict = {}
+	# scenario: user wants to check his/her preferences
+
+	try:
+		user = User.objects.get(id=user_id)
+		context_dict['userInfo'] = user
+
+	except User.DoesNotExist:
+		pass
+
+	return render(request, 'bulletin/preferences.html',context_dict)
 
 # return bulletin listing
-def listing(request):
+def listing(request, user_id):
 	return render(request, 'bulletin/listing.html')
 
 # return bulletin details

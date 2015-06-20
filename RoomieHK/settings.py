@@ -83,7 +83,7 @@ DATABASES = {
     'default':{ # change this!
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'roomieDB',
-        'USER': 'root', # change to your own user name
+        'USER': 'han', # change to your own user name
         'PASSWORD': '123',
         'HOST': 'roomie.ddns.net',
         'PORT':'3306',
