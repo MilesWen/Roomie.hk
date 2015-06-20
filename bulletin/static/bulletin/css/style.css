@@ -1,0 +1,202 @@
+/* ---------------------------- */
+/* Hackathon
+/* 2015 Jun
+/* ---------------------------- */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,300italic,400italic,600italic,700italic);
+body {
+	font-family: "Open Sans";
+	font-size: 16px;
+	line-height: 1.4;
+}
+
+/* App icons */
+.icon-setup-loc {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') 0 0;
+}
+.icon-setup-bedroom {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -48px 0;
+}
+.icon-setup-price {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -96px 0;
+}
+.icon-setup-time {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -144px 0;
+}
+.icon-setup-period {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -192px 0;
+}
+.icon-home-search {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -240px 0;
+}
+.icon-gender-f {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -288px 0;
+}
+.icon-gender-m {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -336px 0;
+}
+.icon-listing-loc {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') 0 -96px;
+}
+.icon-listing-area {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -48px -96px;
+} /* end of App icons */
+
+/* App btns */
+.btn-back {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') 0 -48px;
+}
+.btn-edit {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -48px -48px;
+}
+.btn-next-orange {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -96px -48px;
+}
+.btn-next-black {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -144px -48px;
+}/* end of App icons */
+
+/* Room icons */
+.icon-room-bed {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -96px -96px;
+}
+.icon-room-living {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -144px -96px;
+}
+.icon-room-bathroom {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -192px -96px;
+}
+.icon-room-kitchen {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -240px -96px;
+}
+.icon-room-balcony {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -288px -96px;
+}/* end of Room icons */
+
+/* Room furniture/utilities */
+.icon-fridge {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') 0 -144px;
+}
+.icon-washingMachine {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -48px -144px;
+}
+.icon-microwave {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -96px -144px;
+}
+.icon-drawer {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -144px -144px;
+}
+.icon-doubleBed {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -192px -144px;
+}
+.icon-desk {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	zoom:1;
+	background: url('../assets/icons.png') -240px -144px;
+}/* end of Room furniture/utilities */
+
+.app-container {
+	width: 100%;
+	height: 1000px;
+}
+.purple-bg {
+	background: url('../assets/bg.png')
+}
