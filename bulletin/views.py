@@ -3,22 +3,61 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from bulletin.models import User, Room, Bookmark, Friend
 
+from django.contrib.auth import authenticate, login
+
+# facebook login
+import urllib2
+import json
+
 ## login via id & pwd pair or via cookies
 def login(request):
 	# This is a test in branch-Miles
-	return render(request, 'bulletin/login.html')
+	return HttpResponseRedirect(request, 'login/facebook/')
 
 # loging via FB
 def login_FB(request):
 	return render(request, 'bulletin/login.html')
 
+# information from facebook
+def social_login(request):
+	social_user = request.user.social_auth.filter(provider='facebook',).first()
+	if social_user:	
+		url = u'https://graph.facebook.com/{0}/' \
+			  u'taggable_friends?fields=id,name,gender,picture' \
+			  u'&access_token={1}'.format(
+				  social_user.uid,
+				  social_user.extra_data['access_token'],
+		)
+		
+		r = urllib2.Request(url)
+		j = json.loads(urllib2.urlopen(r).read())
+		frdLst = j['data']
+		
+		user = User.objects.get(fbid=social_user.uid)
+		request.session['userid']=user.id
+		#profilePhotoURL = request.session['']
+
+		userFriend = Friend.objects.get(user__id=user.id)
+		if userFriend is None:
+			print 'N'
+			userFriend = Friend(user=user, friend=str(frdLst))
+			userFriend.save()
+		else:
+			userFriend.friend=str(frdLst)
+			print userFriend.friend
+			userFriend.save()
+		
+		return profile(request)
+	else:
+		return None
+
 # show profile of user
-def profile(request, user_id):
+def profile(request):
 	# scenario: user wants to check the profile of the roomate/room owner
 	context_dict = {}
 
 	try:
-		user = User.objects.get(id=user_id)
+		user = User.objects.get(id=request.session['userid'])
 		context_dict['userInfo'] = user
 
 	except User.DoesNotExist:
@@ -82,5 +121,5 @@ def details(request, room_id):
 	except Room.DoesNotExist:
 		pass
 
-    # Go render the response and return it to the client.
+	# Go render the response and return it to the client.
 	return render(request, 'bulletin/details.html', context_dict)

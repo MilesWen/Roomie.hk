@@ -13,10 +13,13 @@ urlpatterns = [
 	#	the matched pattern
 
 	# ex: /bulletin/
-	url(r'^$', views.login, name='login'), # login page
+	# url(r'^$', views.login, name='login'), # login page
 
+	# ex: /bulletin/details/
+	url(r'^social_login/$', views.social_login, name='social_login'),
+	
 	# ex: /bulletin/profile/
-	url(r'^profile/(?P<user_id>[0-9]+)/$', views.profile, name='profile'), # profile page
+	url(r'^profile/$', views.profile, name='profile'), # profile page
 
 	# ex: /bulletin/listing/
 	url(r'^listing/(?P<user_id>[0-9]+)/$', views.listing, name='listing'), # listing page

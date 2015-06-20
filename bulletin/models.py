@@ -76,9 +76,9 @@ class Bookmark(models.Model):
         return str("user:" + self.user.__str__() + " bookmark room:" + str(self.room.id))
     
 class Friend(models.Model):
-    user1 = models.ForeignKey(User, related_name='u1')
-    user2 = models.ForeignKey(User)
+    user = models.ForeignKey(User)
+    friend = models.TextField(default='')
     
     def __str__(self):
-        return str("user:" + self.user1.__str__() + " friend with:" + self.user2.__str__())
+        return str("user:" + self.user.__str__() + " friend with:" + self.friend.__str__())
     
