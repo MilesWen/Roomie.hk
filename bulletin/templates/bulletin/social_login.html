@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'bulletin/base.html' %} <!-- using the base.html interface -->
+
+{% load staticfiles %}
+
+{% block title %} Login pages {% endblock %}
+
+{% block body_block %} 
+
+<form action="{{ url_for("social.auth", backend="facebook") }}" method="post">
+	<input type="submit" value="Login" class='btn btn-lg btn-primary'>
+</form>
+
+{% endblock %}

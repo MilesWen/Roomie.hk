@@ -14,7 +14,7 @@ This is the Login page.
   <br>
   <a href="/bulletin/logout">Logout</a>
 {% else %}
-  <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">Login with Facebook</a>
+  <a href="{% url 'social:begin' 'facebook' %}?next={{ views.preferences }}">Login with Facebook</a>
 {% endif %}
 
 {% endblock %}
