@@ -223,6 +223,12 @@ ul.scrollable-view li {
 	height: 240px !important;
 	width: 100% !important;
 }
+
+.carousel-cards-area{
+	position: relative;
+	overflow: hidden
+}
+
 .label-noOfImages {
 	border-radius: 3px;
 	background: rgba(51,51,51,0.5);

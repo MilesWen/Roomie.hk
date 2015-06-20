@@ -1,6 +1,39 @@
-{% profile %}
-==> 'name':name_str, 'date_added':date_str, ....
+<!DOCTYPE html>
 
-{% for roomDate in profile %}
-	{% roomDate.name %}
-{% endfor %}
+{% if forloop.counter == 1 %}
+	<div class="item active">
+{% else %}
+	<div class="item" >
+{% endif %}
+		<div class='listing-card'><!-- listing card -->
+			{% comment %}
+			Room:	{{ forloop.counter }}
+			Owner:	{{ room.user.name }}
+			{% endcomment %}
+
+			<div id="map-canvas"></div>
+			<div class='js-listing-card-price listing-card-price'> HK${{ room.price }} </div>
+			<div class='listing-card-content-div'><!-- listing details -->
+				<div class='card-header'>
+					<div class="row">
+						<div class='profile-pic col-xs-2'>
+							<div class='image-round-wrapper'>
+		  					<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA92yqBQc3NSvA6sHu5-VAY3fIz4i0-VM-_cUZrYb-s6lUqyfvsA' height=40/>
+		  				</div>
+						</div>
+						<div class='headline col-xs-10'>
+							<h3 class='js-listing-card-headline'>Clean and friendly female roommate wanted</h3>
+						</div>
+				</div>
+				<h4 class='header-subline js-listing-card-subline'>In 15 days / Negotiable</h4>
+				<p class='js-location'><span class='icon-listing-loc icon-inline'></span> {{ room.district }} </p>
+				<ul class='listing-card-room-list'>
+					<li class='js-listing-card-area'><span class='icon-inline icon-listing-area'></span>500sqt</li>
+					<li class='js-listing-card-bedrooms'><span class='icon-room-living icon-inline'></span> 2</li>
+					<li class='js-listing-card-bedrooms'><span class='icon-room-bed icon-inline'></span> 1</li>
+					<li class='js-listing-card-bedrooms'><span class='icon-room-bathroom icon-inline'></span>1</li>
+				</ul>
+				<p class='js-listing-card-existingRoommates'>Existing roommate: 1<span class='icon-gender-{% filter force_escape|lower %}{{ room.user.gender }}{% endfilter %} icon-inline'></span></p>
+			</div><!-- end of listing details -->
+		</div><!-- end of listing card -->
+	</div>
