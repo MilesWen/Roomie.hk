@@ -1,9 +1,11 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from bulletin.models import User, Room, Bookmark, Friend
 
 from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout as auth_logout
+
 
 # Get FB img
 def GetFBImg(fbID):
@@ -17,9 +19,15 @@ from distutils.tests.setuptools_build_ext import if_dl
 
 ## login via id & pwd pair or via cookies
 def login(request):
-	# This is a test in branch-Miles
-	return HttpResponseRedirect(request, 'login/facebook/')
+    # context = RequestContext(request, {
+    #     'request': request, 'user': request.user})
+    # return render_to_response('login.html', context_instance=context)
+    return render(request, 'bulletin/login.html')
 
+def logout(request):
+    auth_logout(request)
+    return redirect('/')
+   
 # loging via FB
 def login_FB(request):
 	return render(request, 'bulletin/login.html')
@@ -59,7 +67,7 @@ def social_login(request):
 			userFriend = Friend(user=user, friend=str(frdLst))
 			userFriend.save()
 			
-		return listing(request)
+		return preference(request)
 	else:
 		return None
 

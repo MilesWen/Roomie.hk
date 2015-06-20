@@ -16,6 +16,7 @@ urlpatterns = [
 	# url(r'^$', views.login, name='login'), # login page
 
 	# ex: /bulletin/details/
+	url(r'^logout/$', views.logout, name='logout'),
 	url(r'^social_login/$', views.social_login, name='social_login'),
 	
 	# ex: /bulletin/profile/
