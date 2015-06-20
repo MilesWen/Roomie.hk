@@ -17,6 +17,9 @@ h3 {
 	line-height: 1.3;
 	font-weight: 600;
 }
+input:focus {
+	outline: none;
+}
 a {
 	color: #333;
 	text-decoration: none;
@@ -24,11 +27,20 @@ a {
 a:hover {
 	text-decoration: none;
 }
+a.orange {
+	color: #f7931e;
+}
+.font18 {
+	font-size: 18px;
+}
 .left {
 	float: left;
 }
 .label-grey {
 	color: #999;
+}
+.hidden {
+	display: none;
 }
 
 /* listing template */
@@ -223,6 +235,12 @@ ul.scrollable-view li {
 	height: 240px !important;
 	width: 100% !important;
 }
+
+.carousel-cards-area{
+	position: relative;
+	overflow: hidden
+}
+
 .label-noOfImages {
 	border-radius: 3px;
 	background: rgba(51,51,51,0.5);
@@ -232,7 +250,130 @@ ul.scrollable-view li {
 	color: white;
 	padding: 0.4em 1em;
 }
+.item-price span {
+	background: rgba(247,147,30,0.8);
+	border-radius: 3px;
+	color: white;
+	margin-top: 4px;
+	padding: 0.2em 0.4em;
+	display: inline-block;
+	font-size: 13px;
+	font-weight: 700;
+}
+.btn-long-round {
+	padding: 0.8em 1em;
+	font-size: 17px;
+	border-radius: 40px;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	-webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-repeat: no-repeat;
+}
+.btn-long-round span.bookmark {
+	width: 36px;
+	height: 36px;
+	display: inline-block;
+	vertical-align: middle;
+	background-image: url('../assets/btn-bookark.svg');
+}
+.btn-long-round.orange-line {
+	border: 1px solid rgba(247,147,30,0.8);
+}
+.btn-long-round.orange-line:hover {
+	background: rgba(247,147,30,0.8);
+}
+.btn-long-round.orange-fill {
+	background: rgba(247,147,30,0.8);
+	color: white;
+}
+.profile-pic .image-round-wrapper-bigger {
+	width: 84px;
+	height: 84px;
+	border-radius: 50px;
+	overflow: hidden;
+	display: inline-block;
+}
+.profile-pic .image-round-wrapper-biggest {
+	width: 118px;
+	height: 118px;
+	border-radius: 60px;
+	overflow: hidden;
+	display: inline-block;
+}
+section {
+	padding: 1.5em 1em;
+}
+.grey {
+	background: #f7f7f7;
+}
+span.friend {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+	border-radius: 10px;
+	overflow: hidden;
+	vertical-align: middle;
+}
+ul.listing-renter-about {
+	list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+}
+ul.listing-renter-about li {
+	display: inline-block;
+}
 /* end of listing details page */
+
+/* Settings */
+.roomie-form {
+	padding-top: 2em;
+	width: 270px;
+	margin: 0 auto;
+}
+.roomie-form .roomie-form-field {
+	padding: 0.8em 1em;
+	text-align: left;
+}
+.roomie-form .roomie-form-field.row {
+	border-bottom: 1px solid #ddd;
+}
+.roomie-form .roomie-form-field .col-xs-4, .roomie-form .roomie-form-field .col-xs-3, .roomie-form .roomie-form-field .col-xs-8, .roomie-form .roomie-form-field .col-xs-8 {
+	padding: 1em 0 0.3em;
+}
+.roomie-form .roomie-form-field input {
+	border: none;
+	background: none;
+}
+.tags-selector-group, .range-selector-group {
+	padding: 1.5em 0 1em 0;
+}
+ul.tags-selector, ul.exclusive-tags-selector {
+	list-style-type: none;
+  margin: 0; 
+  margin-bottom: 5px;
+  padding: 0;
+}
+ul.tags-selector li, ul.exclusive-tags-selector li {
+	display: inline-block;
+	padding: 0.5em 1.5em;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	margin-bottom: 0.6em;
+	margin-right: 0.2em;
+	color: #ddd;
+}
+ul.tags-selector li:hover, ul.exclusive-tags-selector li:hover {
+	cursor: pointer;
+}
+ul.tags-selector li.active, ul.exclusive-tags-selector li.active {
+	color: #f7931e;
+	border-color: #f7931e
+}
+/* end of Settings */
 
 /* App icons */
 .icon-inline {
@@ -248,37 +389,37 @@ ul.scrollable-view li {
 }
 .icon-setup-loc {
 	display: inline-block;
-	width: 48px;
-	height: 48px;
-	zoom:1;
+	width: 44px;
+	height: 44px;
+	zoom:0.4;
 	background: url('../assets/icons.png') 0 0;
 }
 .icon-setup-bedroom {
 	display: inline-block;
 	width: 48px;
 	height: 48px;
-	zoom:1;
+	zoom:0.5;
 	background: url('../assets/icons.png') -48px 0;
 }
 .icon-setup-price {
 	display: inline-block;
 	width: 48px;
 	height: 48px;
-	zoom:1;
+	zoom:0.5;
 	background: url('../assets/icons.png') -96px 0;
 }
 .icon-setup-time {
 	display: inline-block;
 	width: 48px;
 	height: 48px;
-	zoom:1;
+	zoom:0.5;
 	background: url('../assets/icons.png') -144px 0;
 }
 .icon-setup-period {
 	display: inline-block;
 	width: 48px;
 	height: 48px;
-	zoom:1;
+	zoom:0.5;
 	background: url('../assets/icons.png') -192px 0;
 }
 .icon-home-search {
@@ -299,7 +440,7 @@ ul.scrollable-view li {
 	display: inline-block;
 	width: 48px;
 	height: 48px;
-	zoom:1;
+	zoom:0.5;
 	background: url('../assets/icons.png') -336px 0;
 }
 .icon-listing-loc {
@@ -322,14 +463,14 @@ ul.scrollable-view li {
 	display: inline-block;
 	width: 48px;
 	height: 48px;
-	zoom:1;
+	zoom:0.5;
 	background: url('../assets/icons.png') 0 -48px;
 }
 .btn-edit {
 	display: inline-block;
 	width: 48px;
 	height: 48px;
-	zoom:1;
+	zoom:0.5;
 	background: url('../assets/icons.png') -48px -48px;
 }
 .btn-next-orange {

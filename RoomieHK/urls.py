@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-
+import sys
 from bulletin import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)), # enable admin page. Remember to add superuser
-    url(r'^$', views.login, name="login"), # set default page
+    url(r'^$', views.social_login, name="social_login"), # set default page
+    url(r'', include('social.apps.django_app.urls', namespace='social')),#, views.login, name="login"), # set default page
     url(r'^bulletin/', include('bulletin.urls', namespace='bulletin')),
 ]

@@ -57,6 +57,7 @@ var PageTransitions = (function() {
 	}
 
 	function nextPage(options ) {
+
 		var animation = (options.animation) ? options.animation : options;
 
 		if( isAnimating ) {
@@ -80,7 +81,14 @@ var PageTransitions = (function() {
 				++current;
 			}
 			else {
-				current = 0;
+				// current = 0;
+
+				// Weining's
+				// trigger form data submission
+				// go to listings
+				submit_form_data()
+				return false;
+				window.location.href = 'http://www.google.com'
 			}
 		}
 

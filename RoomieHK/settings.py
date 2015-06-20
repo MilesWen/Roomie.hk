@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bulletin',
+    # facebook
+    'social.apps.django_app.default',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -53,6 +55,23 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'RoomieHK.urls'
 
+# facebook
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'social.backends.facebook.FacebookOAuth2',
+)
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
+)
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -64,6 +83,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
         },
     },
@@ -109,3 +129,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Login Redirect
+LOGIN_REDIRECT_URL = '/'
+
+# Facebook Login
+SOCIAL_AUTH_FACEBOOK_KEY      = '711878318935439'
+SOCIAL_AUTH_FACEBOOK_SECRET   = '072e2d97b8d474eca7c9d4e4e015aa6e'
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/bulletin/social_login'
+SOCIAL_AUTH_LOGIN_URL = '/'
+
+SOCIAL_AUTH_FACEBOOK_SCOPE = [
+    'email',
+    'user_friends',
+]
