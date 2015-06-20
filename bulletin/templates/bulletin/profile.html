@@ -12,9 +12,12 @@ h1 {font-family:Georgia, serif;}
 </style>
 
 {{ userInfo.id }}
+{% if fbImg %}
+    <img src="{{ fbImg }}" alt="User Picture">
+{% endif %}
+
 {% if userInfo  %}
     <h1> User Own Data. </h1>
-    <img src="{{ userInfo.fbProfilePhotoURL }}" alt="User Picture">
     <p>FacebookID: {{userInfo.fbid}} </p>
     <p>Name:   {{ userInfo.name }}</p>
 	<p>Age:	{{ userInfo.age }}</p>
