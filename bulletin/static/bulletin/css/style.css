@@ -17,6 +17,9 @@ h3 {
 	line-height: 1.3;
 	font-weight: 600;
 }
+input:focus {
+	outline: none;
+}
 a {
 	color: #333;
 	text-decoration: none;
@@ -24,11 +27,20 @@ a {
 a:hover {
 	text-decoration: none;
 }
+a.orange {
+	color: #f7931e;
+}
+.font18 {
+	font-size: 18px;
+}
 .left {
 	float: left;
 }
 .label-grey {
 	color: #999;
+}
+.hidden {
+	display: none;
 }
 
 /* listing template */
@@ -283,6 +295,13 @@ ul.scrollable-view li {
 	overflow: hidden;
 	display: inline-block;
 }
+.profile-pic .image-round-wrapper-biggest {
+	width: 118px;
+	height: 118px;
+	border-radius: 60px;
+	overflow: hidden;
+	display: inline-block;
+}
 section {
 	padding: 1.5em 1em;
 }
@@ -309,6 +328,53 @@ ul.listing-renter-about li {
 }
 /* end of listing details page */
 
+/* Settings */
+.roomie-form {
+	padding-top: 2em;
+	width: 270px;
+	margin: 0 auto;
+}
+.roomie-form .roomie-form-field {
+	padding: 0.8em 1em;
+	text-align: left;
+}
+.roomie-form .roomie-form-field.row {
+	border-bottom: 1px solid #ddd;
+}
+.roomie-form .roomie-form-field .col-xs-4, .roomie-form .roomie-form-field .col-xs-3, .roomie-form .roomie-form-field .col-xs-8, .roomie-form .roomie-form-field .col-xs-8 {
+	padding: 1em 0 0.3em;
+}
+.roomie-form .roomie-form-field input {
+	border: none;
+	background: none;
+}
+.tags-selector-group {
+	padding: 1.5em 0 1em 0;
+}
+ul.tags-selector {
+	list-style-type: none;
+  margin: 0; 
+  margin-bottom: 5px;
+  padding: 0;
+}
+ul.tags-selector li {
+	display: inline-block;
+	padding: 0.5em 1.5em;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	margin-bottom: 0.6em;
+	margin-right: 0.2em;
+	color: #ddd;
+}
+ul.tags-selector li:hover {
+	cursor: pointer;
+}
+ul.tags-selector li.active {
+	color: #f7931e;
+	border-color: #f7931e
+}
+/* end of Settings */
+
 /* App icons */
 .icon-inline {
 	vertical-align: middle;
@@ -323,9 +389,9 @@ ul.listing-renter-about li {
 }
 .icon-setup-loc {
 	display: inline-block;
-	width: 48px;
-	height: 48px;
-	zoom:0.5;
+	width: 44px;
+	height: 44px;
+	zoom:0.4;
 	background: url('../assets/icons.png') 0 0;
 }
 .icon-setup-bedroom {

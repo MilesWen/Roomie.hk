@@ -6,21 +6,179 @@
 {% block head_block %} {% endblock %}
 
 {% block body_block %}
-		<div class="pt-triggers">
-			<button id="iterateEffects" class="pt-touch-button">Show next page transition</button>
-		</div><!-- /triggers -->
 
-		<div id="pt-main" class="pt-perspective">
-			<div class="pt-page pt-page-1"><h1><span>Fuck it! </h1></div>
-			<div class="pt-page pt-page-2"><h1><span>Fuck it again! </h1></div>
-			<div class="pt-page pt-page-3"><h1><span>One more time!!!</h1></div>
-		</div>
+		<div id="pt-main" class="pt-perspective"><!-- Form pages wrapper -->
+			<div class="pt-page text-center"><!-- Form page 1 -->
+				<section>
+					<div class='row' style='margin-top: 82px;'><!-- Form: profile pic -->
+						<div class='profile-pic'>
+							<div class='image-round-wrapper-biggest'>
+								<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA92yqBQc3NSvA6sHu5-VAY3fIz4i0-VM-_cUZrYb-s6lUqyfvsA' height=118/>
+							</div>
+						</div>
+					</div><!-- end of Form: profile pic -->
+					<div class='roomie-form'><!-- Form: roomie-form -->
+						<div class='row roomie-form-field'>
+							<div class='col-xs-4'>
+								<p class='label-grey'>Full name</p>
+							</div>
+							<div class='col-xs-8'>
+								<input class='js-full-name' placeholder='' value='Windy Li' type='text'/>
+							</div>
+						</div><!-- end of row -->	
+						<div class='row roomie-form-field'>
+							<div class='col-xs-4'>
+								<p class='label-grey'>Age</p>
+							</div>
+							<div class='col-xs-3'>
+								<input class='js-age' placeholder='' value='26' type='text'/>
+							</div>
+							<div class='col-xs-5' style='padding-top:0.3em;padding-right:0;'>
+								<img src='{% static 'bulletin/assets/adder-age.png' %}' style='float: right'>
+							</div>
+						</div><!-- end of row -->	
+						<div class='row roomie-form-field'>
+							<div class='col-xs-4'>
+								<p class='label-grey'>Gender</p>
+							</div>
+							<div class='col-xs-4'>
+								<p class='js-gender-text'>Female</p>
+							</div>
+							<div class='col-xs-4 js-gender-switch' style='padding-top:0.3em;padding-right:0;'>
+								<img src='{% static 'bulletin/assets/switch-female.svg' %}' style='max-height:40px;' class='js-gender-f'>
+								<img src='{% static 'bulletin/assets/switch-male.svg' %}' style='max-height:40px' class='js-gender-m hidden'>
+							</div>
+						</div><!-- end of row -->	
+					</div><!-- end of Form: roomie-form -->
+				</section>
+			</div><!-- end of Form page 1 -->
+
+			<div class="pt-page pt-page-2"><!-- Form page 2 -->
+				<section>
+					<h1>The roommate I’m looking for ...</h1>
+					<div class='tags-selector-group' id='tag-selector-group-1'><!-- tags selector: roommate I'm looking for -->
+						<ul class='tags-selector' id='tag-selector-1'>
+							<li class='active js-toggle' name='female'>Female</li>
+							<li class='js-toggle' name='male'>Male</li>
+							<li class='js-toggle' name='bothGender'>Both are fine</li>
+							<li class='js-toggle' name='student'>Student</li>
+							<li class='active js-toggle' name='atWork'>At work</li>
+							<li class='js-toggle' name='hasCat'>Has cat</li>
+							<li class='js-toggle' name='hasDog'>Has dog</li>
+							<li class='js-toggle' name='hasOtherPet'>Has other pet</li>
+							<li class='js-toggle' name='playsInstrument'>Plays instrument</li>
+							<li class='js-toggle' name='prefersQuiet'>Prefers quiet</li>
+							<li class='js-toggle' name='nightOwl'>Night owl</li>
+							<li class='js-toggle' name='earlyBird'>Early bird</li>
+						</ul>
+					</div><!-- end of tags selector: roommate I'm looking for -->
+				</section>
+			</div><!-- end of Form page 2 -->
+
+			<div class="pt-page pt-page-3"><!-- Form page 3 -->
+				<section>
+					<h1>Where would suit me ...</h1>
+					<div class='tags-selector-group' id='tag-selector-group-2'><!-- tags selector: Preferable location -->
+						<p class='label-grey smaller'>Preferable location <span class='icon-setup-loc icon-inline'></span></p>
+						<ul class='tags-selector' id='tag-selector-2'>
+							<li class='active js-toggle' name='anywhere'>Anywhere</li>
+							<li class='js-toggle' name='hongKongIsland'>Hong Kong Island</li>
+							<li class='js-toggle' name='kowloon'>Kowloon</li>
+							<li class='js-toggle' name='newTerritories'>New Territories</li>
+							<li class='active js-toggle' name='outlyingIslands'>Outlying Islands</li>
+						</ul>
+						<a href=#>+ Pick from more districts</a>
+					</div><!-- end of tags selector: Preferable location -->
+
+					<div class='tags-selector-group' id='tag-selector-group-3'><!-- tags selector: Preferred room type -->
+						<p class='label-grey smaller'>Preferred room type <span class='icon-setup-bedroom icon-inline'></span></p>
+						<ul class='tags-selector' id='tag-selector-3'>
+							<li class='active js-toggle' name='privateRoom'>Private room</li>
+							<li class='js-toggle' name='sharedRoom'>Shared room</li>
+							<li class='js-toggle' name='privateBathroom'>Private bathroom</li>
+							<li class='js-toggle' name='furnished'>Furnished</li>
+							<li class='js-toggle' name='2bedRooms'>2 bed rooms</li>
+							<li class='js-toggle' name='3bedRooms'>3 bed rooms</li>
+						</ul>
+					</div><!-- end of tags selector: Preferred room type -->
+				</section>
+			</div><!-- end of Form page 3 -->
+		</div><!-- end of Form pages wrapper -->
+
+		<div class="pt-triggers">
+			<a id="iterateEffects" class='orange font18'>Next <span class='btn-next-orange icon-inline'></span></a>
+		</div><!-- /triggers -->
 
 {% endblock %}
 
-<style type="text/css">
-h1 {font-family:Georgia, serif;}
-</style>
+{% block custome_js_block %}
+	<!-- gender switch -->
+	<script>
+		$('.js-gender-switch').click(function(){
+			if($('.js-gender-f').hasClass('hidden')) {
+				$('.js-gender-f').removeClass('hidden')
+				$('.js-gender-m').addClass('hidden')
+				$('.js-gender-text').text('Female')
+			} else {
+				$('.js-gender-m').removeClass('hidden')
+				$('.js-gender-f').addClass('hidden')
+				$('.js-gender-text').text('Male')
+			}
+		})
+	</script>
+	<!-- end of gender switch -->
+	<!-- tags selector -->
+	<script>
+		var desirableRoomie = {
+					"female": true
+				, "male": false
+				, "bothGender": false
+				, "student": false
+				, "atWork": true
+				, "hasCat": false
+				, "hasDog": false
+				, "hasOtherPet": false
+				, "playsInstrument": false
+				, "prefersQuiet": false
+				, "nightOwl": false
+				, "earlyBird": false
+			}, preferableLocation = {
+					"anywhere": true
+				, "hongKongIsland": false
+				, "kowloon": false
+				, "newTerritories": false
+				, "outlyingIslands": false
+			}, preferredRoomType = {
+					"privateRoom": true
+				, "sharedRoom": false
+				, "privateBathroom": false
+				, "furnished": false
+				, "2bedRooms": false
+				, "3bedRooms": false
+			}
+		$('ul.tags-selector li').click(function(){
+			var name=$(this).attr('name')
+			if($(this).hasClass('active')) {
+				$(this).removeClass('active')
+				if (desirableRoomie[name])
+					desirableRoomie[name] = false
+				if (preferableLocation[name])
+					preferableLocation[name] = false
+				if (preferredRoomType[name])
+					preferredRoomType[name] = false
+			} else {
+				$(this).addClass('active')
+				if (desirableRoomie[name])
+					desirableRoomie[name] = true
+				if (preferableLocation[name])
+					preferableLocation[name] = true
+				if (preferredRoomType[name])
+					preferredRoomType[name] = true
+			}
+		})
+	</script>
+	<!-- end of tags selector -->
+{% endblock %}
 
 {{ userInfo.id }}
 {% if userInfo  %}
