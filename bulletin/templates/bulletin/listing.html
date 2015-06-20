@@ -8,7 +8,7 @@
 {% block body_block %}
 	<!-- Hamburger -->
     <nav id="menu" class="menu">
-      <a href="https://github.com/mango/slideout" target="_blank">
+      <a href="" target="_blank">
         <header class="menu-header">
           <span class="menu-header-title">#</span>
         </header>
@@ -38,10 +38,66 @@
 
     <div id="panel" class="panel purple-bg app-container"><!-- App body -->
       <header class="panel-header">
-        <button class="btn-hamburger js-slideout-toggle"></button>
+        <div class="row">
+        	<div class='col-xs-2'>
+		        <button class="btn-hamburger js-slideout-toggle" style='padding:2.5em;'></button>
+	        </div>
+	        <div class='col-xs-10'>
+		        <!-- <div class='roomie-dummy-search left'>Search</div> -->
+		        <div class="input-group roomie-dummy-search left">
+						  <span class='icon-home-search'></span>
+						  <i>Current location</i>
+						</div>
+	        </div>
+        </div>
       </header>
-      <div class='app-content' style='display:block;height:568px;'><!-- App content -->
+      <div class='app-content'><!-- App content -->
       	
+      	<!-- carousel view here -->
+      	<div class='listing-card'><!-- listing card -->
+      		<div id="map-canvas"></div>
+      		<div class='js-listing-card-price listing-card-price'>HKD 6,700</div>
+      		<div class='listing-card-content-div'><!-- listing details -->
+      			<div class='card-header'>
+      				<div class="row">
+	      				<div class='profile-pic col-xs-2'>
+	      					<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA92yqBQc3NSvA6sHu5-VAY3fIz4i0-VM-_cUZrYb-s6lUqyfvsA' height=40/>
+	      				</div>
+	      				<div class='headline col-xs-10'>
+	      					<h3 class='js-listing-card-headline'>Clean and friendly female roommate wanted</h3>
+	      				</div>
+      			</div>
+      			<h4 class='header-subline js-listing-card-subline'>In 15 days / Negotiable</h4>
+      			<p class='js-location'><span class='icon-listing-loc icon-inline'></span>Whampoa Garden, Hung Hom</p>
+      			<ul class='listing-card-room-list'>
+      				<li class='js-listing-card-area'><span class='icon-inline icon-listing-area'></span>500sqt</li>
+      				<li class='js-listing-card-bedrooms'><span class='icon-room-living icon-inline'></span> 2</li>
+      				<li class='js-listing-card-bedrooms'><span class='icon-room-bed icon-inline'></span> 1</li>
+      				<li class='js-listing-card-bedrooms'><span class='icon-room-bathroom icon-inline'></span>1</li>
+      			</ul>
+      			<p class='js-listing-card-existingRoommates'>Existing roommate: 1<span class='icon-gender-f icon-inline'></span></p>
+      		</div><!-- end of listing details -->
+      	</div><!-- end of listing card -->
+	    	<div class='js-view-detail btn-view-detail-div center-align'>
+    			<a href=#>View Details <span class='btn-next-black icon-inline'></span></a>
+    		</div>
+    		<!-- end of carousel view here -->
+
+    		<div class='listing-card-actions'>
+    			<div class="row">
+	        	<div class='col-xs-2'></div>
+	        	<div class='col-xs-4 center-align'>
+	        		<a href='' class='btn-round btn-bookmark'>
+	        		</a>
+	        	</div>
+	        	<div class='col-xs-4 center-align'>
+	        		<a href='' class='btn-round btn-message'>
+	        		</a>
+	        	</div>
+	        	<div class='col-xs-2'></div>
+	        </div>
+    		</div>
+
       </div><!-- end of App content -->
     </div><!-- end of App body -->
 
@@ -58,4 +114,31 @@
       }
     </script>
     <!-- end of Hamburger menu script -->
+    <!-- Google maps in listing card -->
+    <script>
+    	var map
+    		, icon = {
+    			  url: "{% static 'bulletin/assets/map-pin.png' %}"
+    			, size: new google.maps.Size(50, 50)
+    			, origin: new google.maps.Point(0,0)
+    			, anchor: new google.maps.Point(25, 25)
+    		}
+    		, latlng = new google.maps.LatLng(22.306011, 114.1879995)
+				, marker
+			function initialize() {
+			  map = new google.maps.Map(document.getElementById('map-canvas'), {
+				    zoom: 16
+			    , center: {lat: 22.306011, lng: 114.1879995}
+			    , disableDefaultUI: true
+			  })
+			  marker = new google.maps.Marker({
+			      position: latlng
+			    , map: map
+			    , icon: icon
+			    , animation: google.maps.Animation.DROP,
+			  })
+			}
+			google.maps.event.addDomListener(window, 'load', initialize)
+		</script>
+		<!-- end of Google maps in listing card -->
 {% endblock %}
