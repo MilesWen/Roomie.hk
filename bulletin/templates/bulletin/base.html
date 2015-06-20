@@ -19,20 +19,7 @@
 	  <!-- custom styles -->
 	  <link href="{% static 'bulletin/css/style.css'%} " rel="stylesheet" media="screen">
 	</head>
-<<<<<<< HEAD
-	<body>
-		{% block body_block %}
-		{% endblock %}
 
-	<!-- Bootstrap core JavaScript
-	================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="{% static 'bulletin/js/jquery-2.1.4.js' %}"></script>
-	<script src="{% static 'bulletin/js/bootstrap.metain.js' %}"></script>
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
-
-=======
 	<body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">
 		{% block body_block %}
 		{% endblock %}
@@ -44,6 +31,5 @@
 		<script src="{% static 'bulletin/js/bootstrap.min.js' %}"></script>
 		<script src="{% static 'bulletin/js/hamburger.js' %}"></script>
 		<script src="{% static 'bulletin/js/range-selector.js' %}"></script>
->>>>>>> weiningg
 	</body>
 </html>

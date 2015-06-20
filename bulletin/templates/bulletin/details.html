@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- This shows  -->
 {% extends 'bulletin/base.html' %} <!-- using the base.html interface -->
 
 {% load staticfiles %}
@@ -6,3 +7,22 @@
 {% block title %} Details pages {% endblock %}
 
 {% block body_block %} Details {% endblock %}
+
+{% if roomInfo  %}
+	{% if !room.Info.user %}
+		Damn, who owns this shitty house?
+	{% else %}
+		Owner:		{{ roomInfo.user }}
+		Addr:		{{ roomInfo.address }}
+		Dist:		{{ roomInfo.district }}
+		Latitude:	{{ roomInfo.latitude }}
+		Longitude:	{{ roomInfo.longitude }}
+		Private?:	{{ roomInfo.isPrivate }}
+		Price:		{{ roomInfo.price }}
+		Period:		{{ roomInfo.period }}
+		MoveIn:		{{ roomInfo.moveInDate }}
+		Size:		{{ roomInfo.size }}
+		NumMates:	{{ roomInfo.numExistingMates }}
+		<img scr="{% roomInfo.pictureURL %}" alt="Room Picture">
+	{% endif %}
+{% endif %}
