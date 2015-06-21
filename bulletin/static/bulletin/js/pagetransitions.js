@@ -86,9 +86,9 @@ var PageTransitions = (function() {
 				// Weining's
 				// trigger form data submission
 				// go to listings
-				submit_form_data()
-				return false;
-				window.location.href = 'http://www.google.com'
+				//submit_form_data()
+				//return false;
+				//window.location.href = 'http://www.google.com'
 			}
 		}
 
