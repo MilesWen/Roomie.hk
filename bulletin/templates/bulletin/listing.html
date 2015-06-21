@@ -11,7 +11,11 @@
     <nav id="menu" class="menu">
       <a href="" target="_blank">
         <header class="menu-header">
-          <span class="menu-header-title">#</span>
+          <div class='profile-pic'>
+            <div class='image-round-wrapper'>
+              <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA92yqBQc3NSvA6sHu5-VAY3fIz4i0-VM-_cUZrYb-s6lUqyfvsA' height=40/>
+            </div>
+          </div>
         </header>
       </a>
       <!-- Menu area -->
@@ -24,14 +28,15 @@
       </section>
       <section class="menu-section">
         <ul class="menu-section-list">
-          <li><a href="" target="_blank">Message</a></li>
-          <li><a href="" target="_blank">Bookmarks</a></li>
+          <li><a href="">Message</a></li>
+          <li><a href="">Bookmarks</a></li>
         </ul>
       </section>
       <section class="menu-section">
         <ul class="menu-section-list">
-          <li><a href="" target="_blank">Logout</a></li>
+          <li><a href="">Logout</a></li>
         </ul>
+        <p class='label-grey' style='padding-left:20px;'>Produced with ❤</p>
       </section>
       <!-- end of Menu area -->
     </nav>
@@ -65,14 +70,13 @@
             </div>
           </div>
         </div>
-
     		<!-- end of carousel view here -->
 
     		<div class='listing-card-actions'>
     			<div class="row">
 	        	<div class='col-xs-2'></div>
 	        	<div class='col-xs-4 center-align'>
-	        		<a href='' class='btn-round btn-bookmark'>
+	        		<a href='' class='btn-round btn-bookmark js-bookmark' id=''>
 	        		</a>
 	        	</div>
 	        	<div class='col-xs-4 center-align'>
@@ -99,8 +103,24 @@
       }
     </script>
     <!-- end of Hamburger menu script -->
+
 {% endblock %}
 
+{% block custome_js_block %}
+  <!-- bookmark action -->
+  <script>
+    $('.js-bookmark').click(function(){
+      console.log($(this).attr('class'))
+      if($(this).hasClass('active')) {
+        $(this).removeClass('active')
+      } else {
+        $(this).addClass('active')
+      }
+      return false;
+    })
+  </script><!-- end of bookmark action -->
+
+{% endblock %}
 <!-- Delete the following codes in production mode! -->
 
 {% if seeker %}

@@ -75,7 +75,7 @@ function Slideout(options) {
   this._fx = options.fx || 'ease';
   this._duration = parseInt(options.duration, 10) || 300;
   this._tolerance = parseInt(options.tolerance, 10) || 70;
-  this._padding = this._translateTo = parseInt(options.padding, 10) || 256;
+  this._padding = this._translateTo = parseInt(options.padding, 10) || 200;
   this._orientation = options.side === 'right' ? -1 : 1;
   this._translateTo *= this._orientation;
 
