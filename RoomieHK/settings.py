@@ -104,7 +104,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'roomieDB',
         'USER': 'root', # change to your own user name
-        'PASSWORD': '',#'123',
+        'PASSWORD': '',#'123',#'123',
         'HOST': 'localhost', #'roomie.ddns.net',
         'PORT':'3306',
     },
@@ -134,8 +134,8 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
 
 # Facebook Login
-SOCIAL_AUTH_FACEBOOK_KEY      = '711878318935439'
-SOCIAL_AUTH_FACEBOOK_SECRET   = '072e2d97b8d474eca7c9d4e4e015aa6e'
+SOCIAL_AUTH_FACEBOOK_KEY      = '983781571674498'#'711878318935439'
+SOCIAL_AUTH_FACEBOOK_SECRET   = '7efc5e791cd0bd3747cc1065e7104f7d' #'072e2d97b8d474eca7c9d4e4e015aa6e'
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/bulletin/social_login'
 SOCIAL_AUTH_LOGIN_URL = '/'

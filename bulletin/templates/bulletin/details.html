@@ -11,7 +11,7 @@
 	<div class='nav-header'>
 		<div class="row">
 			<div class='col-xs-1' style='padding:0;padding-top:0.4em;margin-left:-5px;'>
-				<a href=''><span class='btn-back'></span></a>
+				<a herf='/bulletin/listing/{{seeker}}/'>  <span class='btn-back'></span></a>
 			</div>
 			<div class='profile-pic col-xs-2'>
 				<div class='image-round-wrapper'>
@@ -209,7 +209,7 @@
 		</div><!-- end of Available furniture in the room to rent -->
 
 		<div class='list-item' id='listing-detail-bookmark'><!-- Detail: bookmark -->
-			<a class='btn-long-round orange-line' href=#><span class='bookmark'></span> Bookmark this listing</a>
+			<a class='btn-long-round orange-line js-bookmark' href=#><span class='bookmark'></span> Bookmark this listing</a>
 		</div><!-- end of Detail: bookmark -->
 
 		<section id='listing-current-renter' class='grey text-center'><!-- Detail: about current renter -->
@@ -268,6 +268,18 @@
 		  swipe: 50 // percent-per-second, default is 50. Pass false to disable swipe
 		}) 
 	</script><!-- end of Carousel of images -->
+	<!-- bookmark action -->
+	<script>
+    $('.js-bookmark').click(function(){
+      console.log($(this).attr('class'))
+      if($(this).hasClass('active')) {
+        $(this).removeClass('active')
+      } else {
+        $(this).addClass('active')
+      }
+      return false;
+    })
+  </script><!-- end of bookmark action -->
 {% endblock %}
 
 

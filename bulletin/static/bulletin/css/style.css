@@ -24,8 +24,10 @@ a {
 	color: #333;
 	text-decoration: none;
 }
-a:hover {
+a:hover, a:focus, a:active {
+	color: #333;
 	text-decoration: none;
+	outline: none;
 }
 a.orange {
 	color: #f7931e;
@@ -73,6 +75,15 @@ body#roomie-listing-page {
 	display: inline-block;
 	position: relative;
 }
+#wrapper {
+  margin-top:0;
+  width: 100%; 
+  height: 160px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute; /* this breaks the overflow:hidden in Chrome/Opera */
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); /* this fixes the overflow:hidden in Chrome/Opera */
+}
 #map-canvas {
   height: 160px;
   width: 100%;
@@ -104,6 +115,7 @@ body#roomie-listing-page {
 	padding: 1em 1em 0 1em;
 	text-align: left;
 	font-size: 14px;
+	margin-top: 160px;
 }
 .listing-card-content-div .headline {
 	padding-right: 0;
@@ -172,7 +184,7 @@ ul.listing-card-room-list li {
   transition: all 0.5s;
   background-repeat: no-repeat;
 }
-.btn-round:hover {
+.btn-round:hover, .btn-round.active {
 	background-color: rgba(247, 147, 30, 0.8);
 }
 .btn-round.btn-bookmark {
@@ -281,7 +293,7 @@ ul.scrollable-view li {
 .btn-long-round.orange-line {
 	border: 1px solid rgba(247,147,30,0.8);
 }
-.btn-long-round.orange-line:hover {
+.btn-long-round.orange-line:hover, .btn-long-round.orange-line.active {
 	background: rgba(247,147,30,0.8);
 }
 .btn-long-round.orange-fill {

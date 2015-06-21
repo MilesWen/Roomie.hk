@@ -159,6 +159,7 @@
 	<!-- end of gender switch -->
 	<!-- tags selector -->
 	<script>
+		var User_ID = "{{ userInfo_id }}"
 		var desirableRoomie = {
 					"female": true
 				, "male": false
@@ -188,6 +189,7 @@
 			}, moveInTime = "inAMonth"
 			, stayingPeriod = ""
 		$('ul.tags-selector li').click(function(){
+			console.log('clicked')
 			var name=$(this).attr('name')
 			if($(this).hasClass('active')) {
 				$(this).removeClass('active')
@@ -247,7 +249,9 @@
 	 	})
 	</script>
 	<!-- end of tags selector -->
-	<script src="{% static 'bulletin/js/submit-form.js' %}"></script>
+	<script src="{% static 'bulletin/js/submit-form.js' %}">
+		
+	</script>
 {% endblock %}
 
 {{ userInfo.id }}
@@ -278,6 +282,3 @@
 	<p>Preferred StayPeriod:	{{ userInfo.stayPeriod }}</p>
 
 {% endif %}
-
-
-{% endblock %}
