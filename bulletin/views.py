@@ -107,7 +107,7 @@ def preferences(request, user_id):
 
 # update user preferences
 @csrf_exempt
-def update_preferences(request, criteria, user_id):
+def update_preferences(request, user_id):
 	listing(request, user_id)
 
 # return bulletin listing
