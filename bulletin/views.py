@@ -13,6 +13,21 @@ def GetFBImg(fbID):
 	fmt = r'https://graph.facebook.com/{fbid}/picture?type=large'
 	return fmt.format(fbid=fbID)
 
+def GetFriendSet(userID):
+	try:
+		frdObj = Friend.objects.get(user__id==userID)
+		lstStr = frdObj.friend
+		lst = eval(lstStr)
+		nameSet = set(list(item['name'] for item in lst))
+		return nameSet
+	except:
+		return set([])
+
+def CommonFriendNum(userID1, userID2):
+	set1 = GetFriendSet(userID1)
+	set2 = GetFriendSet(userID2)
+	return len(set1.intersection(set2))
+
 # facebook login
 import urllib2
 import json
@@ -32,6 +47,7 @@ def logout(request):
 # loging via FB
 def login_FB(request):
 	return render(request, 'bulletin/login.html')
+
 
 # information from facebook
 # @login_required(login_url='/')
