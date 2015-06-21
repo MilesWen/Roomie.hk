@@ -9,6 +9,7 @@
 
 This is the Login page.
 
+{% comment %}
 {% if user and not user.is_anonymous %}
   <a>Hello, {{ user.get_full_name }}!</a>
   <br>
@@ -16,5 +17,7 @@ This is the Login page.
 {% else %}
   <a href="{% url 'social:begin' 'facebook' %}?next={{ views.preferences }}">Login with Facebook</a>
 {% endif %}
+{% endcomment %}
+
 
 {% endblock %}
