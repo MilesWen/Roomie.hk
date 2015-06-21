@@ -120,6 +120,12 @@
     })
   </script><!-- end of bookmark action -->
 
+  <!-- Carousel of images -->
+  <script>
+    $("#carousel-example-generic").carousel({
+      swipe: 50 // percent-per-second, default is 50. Pass false to disable swipe
+    }) 
+  </script><!-- end of Carousel of images -->
 {% endblock %}
 <!-- Delete the following codes in production mode! -->
 
@@ -154,12 +160,3 @@
 {% else %}
     The specified seeker does not exist!
 {% endif %}
-
-{% block custome_js_block %}
-  <!-- Carousel of images -->
-  <script>
-    $("#carousel-example-generic").carousel({
-      swipe: 50 // percent-per-second, default is 50. Pass false to disable swipe
-    }) 
-  </script><!-- end of Carousel of images -->
-{% endblock %}
