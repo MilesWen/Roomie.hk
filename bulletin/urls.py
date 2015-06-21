@@ -27,6 +27,8 @@ urlpatterns = [
 
 	# ex: /bulletin/preferences/
 	url(r'^preferences/(?P<user_id>[0-9]+)/$', views.preferences, name='preferences'), # preferences page
+	# ex: /bulletin/preferences/user_id/update
+	url(r'^preferences/(?P<user_id>[0-9]+)/update/$', views.update_preferences, name="updage"), # update preferences
 
 	# ex: /bulletin/details/
 	url(r'^details/(?P<room_id>[0-9]+)/(?P<user_id>[0-9]+)/$', views.details, name="details"), # details page

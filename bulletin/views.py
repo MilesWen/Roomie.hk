@@ -7,6 +7,8 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.decorators import login_required
 
+from django.views.decorators.csrf import csrf_exempt
+
 
 # Get FB img
 def GetFBImg(fbID):
@@ -102,6 +104,11 @@ def preferences(request, user_id):
 		pass
 
 	return render(request, 'bulletin/preferences.html',context_dict)
+
+# update user preferences
+@csrf_exempt
+def update_preferences(request, criteria, user_id):
+	listing(request, user_id)
 
 # return bulletin listing
 # @login_required(login_url='/')
