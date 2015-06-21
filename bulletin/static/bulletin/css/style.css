@@ -28,6 +28,7 @@ a:hover, a:focus, a:active {
 	color: #333;
 	text-decoration: none;
 	outline: none;
+	cursor: pointer;
 }
 a.orange {
 	color: #f7931e;
