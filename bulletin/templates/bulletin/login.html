@@ -7,17 +7,25 @@
 
 {% block body_block %} 
 
-This is the Login page.
+<div style='display: block;margin: 0 auto;margin-top: 190px;width:100%;text-align:center'>
+	<div class='wow fadeInUp'>
+		<img src="{% static 'bulletin/assets/launch-logo.png' %}"/>
+	</div>
 
-{% comment %}
 {% if user and not user.is_anonymous %}
   <a>Hello, {{ user.get_full_name }}!</a>
   <br>
   <a href="/bulletin/logout">Logout</a>
+</div>
 {% else %}
-  <a href="{% url 'social:begin' 'facebook' %}?next={{ views.preferences }}">Login with Facebook</a>
+  <a href="{% url 'social:begin' 'facebook' %}?next={{ views.preferences }}" style='position: absolute; bottom: 2em;font-size: 18px;color:#f7931e;left:0;width:100%;'>Login with Facebook</a>
+ </div>
 {% endif %}
-{% endcomment %}
 
+{% endblock %}
 
+{% block custome_js_block %}
+	<script>
+	new WOW().init();
+	</script>
 {% endblock %}
